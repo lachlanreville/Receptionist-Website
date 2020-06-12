@@ -1,0 +1,13 @@
+.sideNav {
+    width: 200px;
+    height: 100vh;
+    display: flex;
+    background-color: #053F5E;
+    justify-content: center;
+    align-content: center;
+    float: left;
+}
+
+.navDecoration {
+    list-style: none;
+}
