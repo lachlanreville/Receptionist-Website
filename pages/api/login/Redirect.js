@@ -18,7 +18,7 @@ export default async (req, res) => {
                 scope: "identify guilds",
                 client_id,
                 client_secret,
-                redirect_uri: "http://localhost:3000/api/login/redirect",
+                redirect_uri: "https://receptioni.st/api/login/redirect",
             }),
             {
                 headers: {
@@ -32,13 +32,13 @@ export default async (req, res) => {
 
     if (!data) {
         res.writeHead(301, {
-            Location: "http://localhost:3000/api/login"
+            Location: "https://receptioni.st/api/login"
             //add other headers here...
         });
         res.end();
     } else {
         res.writeHead(301, {
-            Location: "http://localhost:3000/dashboard?access_token=" + data.data.access_token + "&refresh_token=" + data.data.refresh_token
+            Location: "https://receptioni.st/dashboard?access_token=" + data.data.access_token + "&refresh_token=" + data.data.refresh_token
             //add other headers here...
         });
         res.end();
