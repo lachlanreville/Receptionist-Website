@@ -11,7 +11,7 @@ export default (props) => {
             let access = window.localStorage.getItem("access_token")
             let refresh = window.localStorage.getItem("refresh_token")
 
-            axios.post("http://localhost:3000/api/users",
+            axios.post("https://receptioni.st/api/users",
                 {
                     access,
                     refresh
@@ -38,7 +38,7 @@ export default (props) => {
                 <ul className={classnames(styles.navDecoration)}>
                     <li>
                         {data ? <img src={"https://cdn.discordapp.com/avatars/" + data.id + "/" + data.avatar + ".jpg?size=128"} width="96" height="96" alt="Logo" className={styles.img} /> :
-                            <img src="http://localhost:3000/img/Logo-3.png" width="96" height="96" alt="Logo" className={styles.img} />
+                            <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" alt="Logo" className={styles.img} />
                         }
                     </li>
                 </ul>

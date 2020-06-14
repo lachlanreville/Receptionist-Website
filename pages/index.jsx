@@ -20,7 +20,7 @@ export default () => {
                         <p>Bringing Tickets And Applications To Your Discord Server With Ease</p>
                     </Column>
                     <Column size="3">
-                        <img src="http://localhost:3000/img/Logo-3.png" width="256" height="256" alt="Logo" style={{ margin: "auto" }} />
+                        <img src="https://receptioni.st/img/Logo-3.png" width="256" height="256" alt="Logo" style={{ margin: "auto" }} />
                     </Column>
                 </Row>
             </Container>

@@ -13,7 +13,7 @@ export default (props) => {
             let access = window.localStorage.getItem("access_token")
             let refresh = window.localStorage.getItem("refresh_token")
 
-            axios.post("http://localhost:3000/api/users/guilds",
+            axios.post("https://receptioni.st/api/users/guilds",
                 {
                     access,
                     refresh
@@ -55,7 +55,7 @@ const DisplayGuilds = (props) => {
             {props.guilds.icon ?
                 <img src={"https://cdn.discordapp.com/icons/" + props.guilds.id + "/" + props.guilds.icon + ".webp?size=256"} width="96" height="96" />
                 :
-                <img src="http://localhost:3000/img/Logo-3.png" width="96" height="96" />}
+                <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" />}
 
             <div>
                 <h3>
@@ -72,7 +72,7 @@ const DisplayGuilds = (props) => {
 const LoadingGif = () => {
     return (
         <div style={{ display: "flex", minHeight: "100vh", justifyContent: "center", alignContent: "center" }}>
-            <img src="http://localhost:3000/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
+            <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
         </div>
     )
 }

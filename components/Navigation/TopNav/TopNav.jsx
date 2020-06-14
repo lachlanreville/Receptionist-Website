@@ -12,7 +12,7 @@ export default () => {
             <nav className={styles.nav}>
                 <ul className={styles.left}>
                     <li>
-                        <img src="http://localhost:3000/img/Logo-3.png" width="64" height="64" alt="Logo" className={styles.img} />
+                        <img src="https://receptioni.st/img/Logo-3.png" width="64" height="64" alt="Logo" className={styles.img} />
                     </li>
                     <GrMenu size="40" className={styles.hide} onClick={() => setToggle(!toggle)} />
                     <li className={classnames(styles.navLink, { [styles.hideNav]: toggle })}>
