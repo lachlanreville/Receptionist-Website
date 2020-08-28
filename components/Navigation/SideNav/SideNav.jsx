@@ -46,8 +46,8 @@ export default (props) => {
                     </li>
                 </ul>
                 <ul className={classnames(styles.navDecoration)}>
-                    <li className={styles.buttons}><a>Dashboard</a></li>
-                    <li className={styles.buttons}><a>Subscriptions</a></li>
+                    <li className={styles.buttons}><a className={styles.aCenter}>Dashboard</a></li>
+                    <li className={styles.buttons}><a className={styles.aCenter}>Subscriptions</a></li>
                 </ul>
             </aside>
             <section>

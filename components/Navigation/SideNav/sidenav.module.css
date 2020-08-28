@@ -25,9 +25,15 @@
 
 .buttons {
     width: 160px;
-    height: 40px;
+    height: 30px;
     background-color: #115173;
     border: 1px solid white;
     border-radius: 10px;
-    align-self: center;
+    margin: auto;
+    text-align: center;    
+    display: flex;
+}
+
+.aCenter {
+    margin: auto;
 }
