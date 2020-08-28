@@ -29,4 +29,7 @@
     background-color: #115173;
     border: 1px solid white;
     border-radius: 10px;
+    display:flex;
+    align-self: center;
+    justify-content: center;
 }
