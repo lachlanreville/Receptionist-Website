@@ -20,12 +20,12 @@
 .bottomFlex {
     list-style: none;
     text-align: center;
-    justify-self: flex-end;
     flex-direction: column;
     flex-wrap: wrap;
     bottom: 0px;
     position: absolute;
     align-self: center;
+    margin-bottom: 10px;
 }
 
 
