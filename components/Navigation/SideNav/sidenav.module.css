@@ -10,4 +10,15 @@
 
 .navDecoration {
     list-style: none;
+    display: inline-flex;
+    text-align: center;
+    justify-self: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.image {
+    border: 1px solid white;
+    border-radius: 32px;
+    margin-top: 40px;
 }

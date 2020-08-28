@@ -41,6 +41,9 @@ export default (props) => {
                             <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" alt="Logo" className={styles.img} />
                         }
                     </li>
+                    <li>
+                        {data ? <h2>{data.username + data.discriminator}</h2> : <h2>Loading...</h2>}
+                    </li>
                 </ul>
             </aside>
             <section>
