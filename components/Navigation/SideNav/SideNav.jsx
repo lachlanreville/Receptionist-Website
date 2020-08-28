@@ -46,8 +46,8 @@ export default (props) => {
                     </li>
                 </ul>
                 <ul>
-                    <li><a>Dashboard</a></li>
-                    <li><a>Subscriptions</a></li>
+                    <li><a className={styles.buttons}>Dashboard</a></li>
+                    <li><a className={styles.buttons}>Subscriptions</a></li>
                 </ul>
             </aside>
             <section>
