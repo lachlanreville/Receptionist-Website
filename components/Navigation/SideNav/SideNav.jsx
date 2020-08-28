@@ -45,6 +45,10 @@ export default (props) => {
                         {data ? <h2>{data.username + "#" + data.discriminator}</h2> : <h2>Loading...</h2>}
                     </li>
                 </ul>
+                <ul>
+                    <li><a>Dashboard</a></li>
+                    <li><a>Subscriptions</a></li>
+                </ul>
             </aside>
             <section>
                 {props.children}
