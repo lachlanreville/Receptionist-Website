@@ -49,6 +49,9 @@ export default (props) => {
                     <li className={styles.buttons}><a className={styles.aCenter}>Dashboard</a></li>
                     <li className={styles.buttons}><a className={styles.aCenter}>Subscriptions</a></li>
                 </ul>
+                <ul className={classnames(styles.bottomFlex)}>
+                    <li className={styles.buttons}><a className={styles.aCenter}>Log Out</a></li>
+                </ul>
             </aside>
             <section>
                 {props.children}
