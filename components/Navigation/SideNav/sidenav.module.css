@@ -3,9 +3,9 @@
     height: 100vh;
     display: flex;
     background-color: #053F5E;
-    justify-content: center;
     align-content: center;
     float: left;
+    flex-direction: column;
 }
 
 .navDecoration {
@@ -21,4 +21,12 @@
     border: 1px solid white;
     border-radius: 32px;
     margin-top: 40px;
+}
+
+.buttons {
+    width: 160px;
+    height: 40px;
+    background-color: #115173;
+    border: 1px solid white;
+    border-radius: 10px;
 }
