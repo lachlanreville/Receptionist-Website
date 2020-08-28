@@ -45,7 +45,7 @@ export default (props) => {
                         {data ? <h2>{data.username + "#" + data.discriminator}</h2> : <h2>Loading...</h2>}
                     </li>
                 </ul>
-                <ul>
+                <ul className={classnames(styles.navDecoration)}>
                     <li><a className={styles.buttons}>Dashboard</a></li>
                     <li><a className={styles.buttons}>Subscriptions</a></li>
                 </ul>
