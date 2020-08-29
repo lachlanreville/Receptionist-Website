@@ -6,6 +6,7 @@
     align-content: center;
     float: left;
     flex-direction: column;
+    transition: width 500ms ease;
 }
 
 .navDecoration {
@@ -52,7 +53,6 @@
 }
 
 .hideNav {
-    display:none;
-    transition: width 500ms;
-    transition-timing-function: ease;
+    position: absolute;
+    left: -200px;
 }
