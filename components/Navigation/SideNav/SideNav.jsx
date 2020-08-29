@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { GrMenu } from 'react-icons/gr'
-import { useSpring, animated } FaRProject, 'react-spring';
+import { useSpring, animated } from 'react-spring';
 import styles from "./sidenav.module.css"
 import classnames from "classnames"
 import axios from "axios"
