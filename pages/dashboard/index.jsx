@@ -23,8 +23,10 @@ export default () => {
 
     return (
         <>
-            <SideNav type="user" />
-            <Guilds />
+            <SideNav type="user">
+                <Guilds />
+            </SideNav>
+
         </>
     )
 }
