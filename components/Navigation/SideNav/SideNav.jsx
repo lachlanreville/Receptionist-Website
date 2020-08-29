@@ -9,10 +9,11 @@ export default (props) => {
     const [data, setData] = useState(null)
     const [toggle, setToggle] = useState(false)
     const transition = useSpring({
-        width: toggle ? 0 : 200
+        left: toggle ? -200 : 0,
+        position: toggle ? "absolute" : "sticky"
     })
 
-    console.log(transition.width)
+    console.log(transition)
 
     useEffect(() => {
         const getIdentify = async () => {
@@ -42,24 +43,24 @@ export default (props) => {
 
     return (
         <>
-            <animated.aside className={classnames(styles.sideNav)} style={{ width: transition.width }} >
-                <animated.ul className={classnames(styles.navDecoration)}>
-                    <animated.li>
+            <animated.aside className={classnames(styles.sideNav)} style={{ left: transition.left.value, position: transition.position.value }} >
+                <ul className={classnames(styles.navDecoration)}>
+                    <li>
                         {data ? <img src={"https://cdn.discordapp.com/avatars/" + data.id + "/" + data.avatar + ".jpg?size=128"} width="96" height="96" alt="Logo" className={styles.image} /> :
                             <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" alt="Logo" className={styles.image} />
                         }
-                    </animated.li>
-                    <animated.li>
+                    </li>
+                    <li>
                         {data ? <h2>{data.username + "#" + data.discriminator}</h2> : <h2>Loading...</h2>}
-                    </animated.li>
-                </animated.ul>
-                <animated.ul className={classnames(styles.navDecoration)}>
-                    <animated.li className={styles.buttons}><a className={styles.aCenter}>Dashboard</a></animated.li>
-                    <animated.li className={styles.buttons}><a className={styles.aCenter}>Subscriptions</a></animated.li>
-                </animated.ul>
-                <animated.ul className={classnames(styles.bottomFlex)}>
-                    <animated.li className={styles.buttons}><a className={styles.aCenter}>Log Out</a></animated.li>
-                </animated.ul>
+                    </li>
+                </ul>
+                <ul className={classnames(styles.navDecoration)}>
+                    <li className={styles.buttons}><a className={styles.aCenter}>Dashboard</a></li>
+                    <li className={styles.buttons}><a className={styles.aCenter}>Subscriptions</a></li>
+                </ul>
+                <ul className={classnames(styles.bottomFlex)}>
+                    <li className={styles.buttons}><a className={styles.aCenter}>Log Out</a></li>
+                </ul>
             </animated.aside>
             <section>
                 <div>
