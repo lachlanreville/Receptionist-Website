@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react"
 import { GrMenu } from 'react-icons/gr'
+import { useSpring, animated } FaRProject, 'react-spring';
 import styles from "./sidenav.module.css"
 import classnames from "classnames"
 import axios from "axios"
 
 export default (props) => {
     const [data, setData] = useState(null)
-    const [toggle, setToggle] = useState(false);
+    const [toggle, setToggle] = useState(false)
+    const props = useSpring({
+        width: toggle ? 0 : 200
+    })
 
     useEffect(() => {
         const getIdentify = async () => {
@@ -36,7 +40,7 @@ export default (props) => {
 
     return (
         <>
-            <aside className={classnames(styles.sideNav, { [styles.hideNav]: toggle })} >
+            <animated.aside className={classnames(styles.sideNav)} >
                 <ul className={classnames(styles.navDecoration)}>
                     <li>
                         {data ? <img src={"https://cdn.discordapp.com/avatars/" + data.id + "/" + data.avatar + ".jpg?size=128"} width="96" height="96" alt="Logo" className={styles.image} /> :
@@ -54,7 +58,7 @@ export default (props) => {
                 <ul className={classnames(styles.bottomFlex)}>
                     <li className={styles.buttons}><a className={styles.aCenter}>Log Out</a></li>
                 </ul>
-            </aside>
+            </animated.aside>
             <section>
                 <div>
                     <GrMenu size="40" className={styles.hide} onClick={() => setToggle(!toggle)} />
