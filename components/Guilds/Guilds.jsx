@@ -71,8 +71,8 @@ const DisplayGuilds = (props) => {
 
 const LoadingGif = () => {
     return (
-        <div style={{ display: "flex", minHeight: "100vh", justifyContent: "center", alignContent: "center" }}>
+        <Column>
             <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
-        </div>
+        </Column>
     )
 }
