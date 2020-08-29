@@ -56,7 +56,7 @@ export default (props) => {
                     <li className={styles.buttons}><a className={styles.aCenter}>Dashboard</a></li>
                     <li className={styles.buttons}><a className={styles.aCenter}>Subscriptions</a></li>
                 </ul>
-                <ul className={classnames(styles.navDecoration, { [styles.hideElement]: toggle })}>
+                <ul className={classnames(styles.bottomFlex, { [styles.hideElement]: toggle })}>
                     <li className={styles.buttons}><a className={styles.aCenter}>Log Out</a></li>
                 </ul>
             </animated.aside>
