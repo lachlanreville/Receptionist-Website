@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Container from "../Containers/Container"
-import Column from "../Containers/Column"
-import Row from "../Containers/Row"
+import { Container, Column, Row, Break } from '../components/Containers'
 import axios from "axios"
 
 export default (props) => {
