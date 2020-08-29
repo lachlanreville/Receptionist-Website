@@ -6,7 +6,6 @@
     align-content: center;
     float: left;
     flex-direction: column;
-    transition: width 500ms ease;
 }
 
 .navDecoration {
@@ -52,13 +51,6 @@
     margin: auto;
 }
 
-.hideNav {
-    position: absolute;
-    left: -200px;
-}
-
-@media (max-width: 768px) {
-    .hideNav {
-      display: none
-    }
+.hideElement {
+    display: none;
 }

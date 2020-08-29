@@ -42,7 +42,7 @@ export default (props) => {
     return (
         <>
             <animated.aside className={classnames(styles.sideNav)} style={{ width: transition.width }} >
-                <ul className={classnames(styles.navDecoration)}>
+                <ul className={classnames(styles.navDecoration, { [styles.hideElement]: toggle })}>
                     <li>
                         {data ? <img src={"https://cdn.discordapp.com/avatars/" + data.id + "/" + data.avatar + ".jpg?size=128"} width="96" height="96" alt="Logo" className={styles.image} /> :
                             <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" alt="Logo" className={styles.image} />
@@ -52,11 +52,11 @@ export default (props) => {
                         {data ? <h2>{data.username + "#" + data.discriminator}</h2> : <h2>Loading...</h2>}
                     </li>
                 </ul>
-                <ul className={classnames(styles.navDecoration)}>
+                <ul className={classnames(styles.navDecoration, { [styles.hideElement]: toggle })}>
                     <li className={styles.buttons}><a className={styles.aCenter}>Dashboard</a></li>
                     <li className={styles.buttons}><a className={styles.aCenter}>Subscriptions</a></li>
                 </ul>
-                <ul className={classnames(styles.bottomFlex)}>
+                <ul className={classnames(styles.navDecoration, { [styles.hideElement]: toggle })}>
                     <li className={styles.buttons}><a className={styles.aCenter}>Log Out</a></li>
                 </ul>
             </animated.aside>
