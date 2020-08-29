@@ -9,8 +9,8 @@ export default (props) => {
     const [data, setData] = useState(null)
     const [toggle, setToggle] = useState(false)
     const transition = useSpring({
-        left: toggle ? -200 : 0,
-        position: toggle ? "absolute" : "sticky"
+        position: toggle ? "absolute" : "sticky",
+        opacity: toggle ? 0 : 100,
     })
 
     console.log(transition)
@@ -43,7 +43,7 @@ export default (props) => {
 
     return (
         <>
-            <animated.aside className={classnames(styles.sideNav)} style={{ left: transition.left.value, position: transition.position.value }} >
+            <animated.aside className={classnames(styles.sideNav)} style={{ opacity: transition.opacity.value, position: transition.position.value }} >
                 <ul className={classnames(styles.navDecoration)}>
                     <li>
                         {data ? <img src={"https://cdn.discordapp.com/avatars/" + data.id + "/" + data.avatar + ".jpg?size=128"} width="96" height="96" alt="Logo" className={styles.image} /> :
