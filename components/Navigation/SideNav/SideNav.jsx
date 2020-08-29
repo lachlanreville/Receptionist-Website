@@ -42,7 +42,7 @@ export default (props) => {
 
     return (
         <>
-            <animated.aside className={classnames(styles.sideNav)} styles={{ width: transition.width }} >
+            <animated.aside className={classnames(styles.sideNav)} styles={{ width: transition.width.value }} >
                 <ul className={classnames(styles.navDecoration)}>
                     <li>
                         {data ? <img src={"https://cdn.discordapp.com/avatars/" + data.id + "/" + data.avatar + ".jpg?size=128"} width="96" height="96" alt="Logo" className={styles.image} /> :
