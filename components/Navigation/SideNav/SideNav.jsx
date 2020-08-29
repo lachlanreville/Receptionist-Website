@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react"
+import { GrMenu } from 'react-icons/gr'
 import styles from "./sidenav.module.css"
 import classnames from "classnames"
 import axios from "axios"
 
 export default (props) => {
     const [data, setData] = useState(null)
+    const [toggle, setToggle] = useState(true);
 
     useEffect(() => {
         const getIdentify = async () => {
@@ -34,7 +36,7 @@ export default (props) => {
 
     return (
         <>
-            <aside className={classnames(styles.sideNav)} >
+            <aside className={classnames(styles.sideNav, { [styles.hideNav]: toggle })} >
                 <ul className={classnames(styles.navDecoration)}>
                     <li>
                         {data ? <img src={"https://cdn.discordapp.com/avatars/" + data.id + "/" + data.avatar + ".jpg?size=128"} width="96" height="96" alt="Logo" className={styles.image} /> :
@@ -54,6 +56,9 @@ export default (props) => {
                 </ul>
             </aside>
             <section>
+                <div>
+                    <GrMenu size="40" className={styles.hide} onClick={() => setToggle(!toggle)} />
+                </div>
                 {props.children}
             </section>
         </>

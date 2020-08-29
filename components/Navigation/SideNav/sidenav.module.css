@@ -50,3 +50,9 @@
 .aCenter {
     margin: auto;
 }
+
+.hideNav {
+    display:none;
+    transition: width 500ms;
+    transition-timing-function: ease;
+}
