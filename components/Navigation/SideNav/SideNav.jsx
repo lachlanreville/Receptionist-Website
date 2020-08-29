@@ -6,7 +6,7 @@ import axios from "axios"
 
 export default (props) => {
     const [data, setData] = useState(null)
-    const [toggle, setToggle] = useState(true);
+    const [toggle, setToggle] = useState(false);
 
     useEffect(() => {
         const getIdentify = async () => {
