@@ -12,7 +12,7 @@ export default (props) => {
         width: toggle ? 0 : 200
     })
 
-    console.log(transition)
+    console.log(transition.width)
 
     useEffect(() => {
         const getIdentify = async () => {
@@ -42,7 +42,7 @@ export default (props) => {
 
     return (
         <>
-            <animated.aside className={classnames(styles.sideNav)} styles={{ width: transition.width.value }} >
+            <animated.aside className={classnames(styles.sideNav)} style={{ width: transition.width }} >
                 <ul className={classnames(styles.navDecoration)}>
                     <li>
                         {data ? <img src={"https://cdn.discordapp.com/avatars/" + data.id + "/" + data.avatar + ".jpg?size=128"} width="96" height="96" alt="Logo" className={styles.image} /> :
