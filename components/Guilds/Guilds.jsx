@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react"
-import Container from "../Containers/Container"
-import Column from "../Containers/Column"
-import Row from "../Containers/Row"
+import { Container, Column, Row, Break } from '../Containers'
 import axios from "axios"
 
 export default (props) => {
@@ -38,12 +36,14 @@ export default (props) => {
 
     return (
         <>
-            <div style={{ display: "flex", minHeight: "100vh", justifyContent: "space-between", alignContent: "center" }}>
+            <Row>
                 {guilds ?
                     guilds.map((guild, position) => <DisplayGuilds guilds={guild} position={position} />)
                     :
-                    <LoadingGif />}
-            </div>
+                    <Column size="1">
+                        <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
+                    </Column>}
+            </Row>
         </>
     )
 }
@@ -66,13 +66,5 @@ const DisplayGuilds = (props) => {
                     </a>
             </div>
         </div >
-    )
-}
-
-const LoadingGif = () => {
-    return (
-        <Column size="1">
-            <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
-        </Column>
     )
 }
