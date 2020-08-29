@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { Container, Column, Row, Break } from '../Containers'
+import Container from "../Containers/Container"
+import Column from "../Containers/Column"
+import Row from "../Containers/Row"
 import axios from "axios"
 
 export default (props) => {
@@ -36,14 +38,12 @@ export default (props) => {
 
     return (
         <>
-            <Row>
-                {guilds ?
-                    guilds.map((guild, position) => <DisplayGuilds guilds={guild} position={position} />)
-                    :
-                    <Column size="1">
-                        <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
-                    </Column>}
-            </Row>
+            {guilds ?
+                guilds.map((guild, position) => <DisplayGuilds guilds={guild} position={position} />)
+                :
+                <Column size="1">
+                    <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
+                </Column>}
         </>
     )
 }
