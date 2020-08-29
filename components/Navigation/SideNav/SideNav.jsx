@@ -12,6 +12,8 @@ export default (props) => {
         width: toggle ? 0 : 200
     })
 
+    console.log(transition)
+
     useEffect(() => {
         const getIdentify = async () => {
             let access = window.localStorage.getItem("access_token")
