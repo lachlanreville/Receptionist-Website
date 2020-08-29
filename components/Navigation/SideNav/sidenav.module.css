@@ -56,3 +56,9 @@
     position: absolute;
     left: -200px;
 }
+
+@media (max-width: 768px) {
+    .hideNav {
+      display: none
+    }
+}
