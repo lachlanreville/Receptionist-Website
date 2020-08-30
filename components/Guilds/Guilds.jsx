@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Container, Column, Row, Break } from '../Containers'
+import styles from "./guilds.module.css"
 import axios from "axios"
 
 export default (props) => {
@@ -51,20 +51,20 @@ export default (props) => {
 const DisplayGuilds = (props) => {
     console.log(props)
     return (
-        <Column size="6" key={props.position}>
+        <div className={styles.guildsMain}>
             {props.guilds.icon ?
-                <img src={"https://cdn.discordapp.com/icons/" + props.guilds.id + "/" + props.guilds.icon + ".webp?size=256"} width="96" height="96" />
+                <img src={"https://cdn.discordapp.com/icons/" + props.guilds.id + "/" + props.guilds.icon + ".webp?size=256"} width="96" height="96" className={styles.guildsIcon} />
                 :
-                <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" />}
+                <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" className={styles.guildsIcon} />}
 
             <div>
                 <h3>
                     {props.guilds.name}
                 </h3>
-                <a href="https://cat.com">
+                <a href="https://cat.com" className={styles.selectLink}>
                     Select
                     </a>
             </div>
-        </Column >
+        </div >
     )
 }
