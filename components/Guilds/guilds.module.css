@@ -22,6 +22,8 @@
     background-color: #115173;
     width: 120px;
     height: 30px;
+    border: 1px solid white;
+    border-radius: 12px;
 }
 
 .buttonDiv {
@@ -34,4 +36,5 @@
 
 .serverTitle {
     margin: 10px;
+    font-weight: 500;
 }
