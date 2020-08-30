@@ -28,4 +28,10 @@
     display: flex;
     text-align: center;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+.serverTitle {
+    margin: 10px;
 }

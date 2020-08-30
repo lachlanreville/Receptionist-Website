@@ -59,7 +59,7 @@ const DisplayGuilds = (props) => {
                 <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" className={styles.guildsIcon} />}
 
             <div className={styles.buttonDiv}>
-                <h3>
+                <h3 className={styles.serverTitle}>
                     {props.guilds.name}
                 </h3>
                 <a href="https://cat.com" className={styles.selectLink}>
