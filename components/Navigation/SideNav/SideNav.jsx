@@ -3,7 +3,6 @@ import { GrMenu } from 'react-icons/gr'
 import { useSpring, animated } from 'react-spring';
 import styles from "./sidenav.module.css"
 import classnames from "classnames"
-import { RowUncentered } from "../../Containers/"
 import axios from "axios"
 
 export default (props) => {
@@ -61,15 +60,13 @@ export default (props) => {
                     <li className={styles.buttons}><a className={styles.aCenter}>Log Out</a></li>
                 </ul>
             </animated.aside>
-            <RowUncentered>
-                <section>
-                    <div>
-                        <GrMenu size="40" className={styles.hide} onClick={() => setToggle(!toggle)} />
-                        <h1 style={{ margin: "5px" }}>Your Servers:</h1>
-                    </div>
-                    {props.children}
-                </section>
-            </RowUncentered>
+            <section>
+                <div>
+                    <GrMenu size="40" className={styles.hide} onClick={() => setToggle(!toggle)} />
+                    <h1 style={{ margin: "5px" }}>Your Servers:</h1>
+                </div>
+                {props.children}
+            </section>
         </>
     )
 }
