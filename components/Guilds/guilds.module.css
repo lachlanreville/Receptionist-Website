@@ -24,6 +24,9 @@
     height: 30px;
     border: 1px solid white;
     border-radius: 12px;
+    font-size: 18px;
+    color:white;
+    text-decoration: none;
 }
 
 .buttonDiv {
