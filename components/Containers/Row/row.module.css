@@ -1,4 +1,4 @@
-.row {
+.RowUncentered {
     display: flex;
     flex-wrap: wrap;
 }

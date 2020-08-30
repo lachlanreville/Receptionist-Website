@@ -4,7 +4,7 @@ import classnames from "classnames"
 export function RowUncentered(props) {
 
     return (
-        <div className={styles.row}>
+        <div className={styles.RowUncentered}>
             {props.children}
         </div>
     )
