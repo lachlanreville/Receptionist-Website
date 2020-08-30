@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styles from "./guilds.module.css"
-import { Row } from '../Containers/'
+import { Row, Column } from '../Containers/'
 import axios from "axios"
 
 export default (props) => {
