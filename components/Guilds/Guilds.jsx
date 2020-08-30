@@ -62,7 +62,7 @@ const DisplayGuilds = (props) => {
                 <h3 className={styles.serverTitle}>
                     {props.guilds.name}
                 </h3>
-                <a href="https://cat.com" className={styles.selectLink}>
+                <a href={"/" + props.guild.id + "/"} className={styles.selectLink}>
                     Select
                     </a>
             </div>
