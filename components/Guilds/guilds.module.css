@@ -4,15 +4,18 @@
     background-color: #053F5E;
     display: flex;
     justify-content: center;
-    align-content: center;
     margin: 15px;
     border: 1px solid white;
     border-radius: 15px;
+    flex-direction: column;
+    text-align: center;
 }
 
 .guildsIcon { 
     border: 1px solid white;
     border-radius: 30px;
+    margin: 12px;
+    align-self: center;
 }
 
 .selectLink {
