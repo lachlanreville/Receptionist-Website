@@ -58,7 +58,7 @@ const DisplayGuilds = (props) => {
                 :
                 <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" className={styles.guildsIcon} />}
 
-            <div>
+            <div className={styles.buttonDiv}>
                 <h3>
                     {props.guilds.name}
                 </h3>
