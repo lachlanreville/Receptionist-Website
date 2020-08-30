@@ -36,12 +36,14 @@ export default (props) => {
 
     return (
         <>
-            {guilds ?
-                guilds.map((guild, position) => <DisplayGuilds guilds={guild} position={position} />)
-                :
-                <Column size="1">
-                    <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
-                </Column>}
+            <Row>
+                {guilds ?
+                    guilds.map((guild, position) => <DisplayGuilds guilds={guild} position={position} />)
+                    :
+                    <Column size="1">
+                        <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
+                    </Column>}
+            </Row>
         </>
     )
 }
