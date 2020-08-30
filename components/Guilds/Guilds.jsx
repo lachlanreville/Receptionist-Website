@@ -49,7 +49,7 @@ export default (props) => {
 const DisplayGuilds = (props) => {
     console.log(props)
     return (
-        <div key={props.position}>
+        <Column size="6" key={props.position}>
             {props.guilds.icon ?
                 <img src={"https://cdn.discordapp.com/icons/" + props.guilds.id + "/" + props.guilds.icon + ".webp?size=256"} width="96" height="96" />
                 :
@@ -63,6 +63,6 @@ const DisplayGuilds = (props) => {
                     Select
                     </a>
             </div>
-        </div >
+        </Column >
     )
 }
