@@ -63,7 +63,7 @@ export default (props) => {
             <section>
                 <div>
                     <GrMenu size="40" className={styles.hide} onClick={() => setToggle(!toggle)} />
-                    <h1 style={{ margin: "5px" }}>Your Servers:</h1>
+                    <h1 style={{ margin: 5 }}>Your Servers:</h1>
                 </div>
                 {props.children}
             </section>
