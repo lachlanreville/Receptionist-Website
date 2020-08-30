@@ -37,7 +37,7 @@ export default (props) => {
 
     return (
         <>
-            <Row>
+            <Row style="justify-content: space-evenly;">
                 {guilds ?
                     guilds.map((guild, position) => <DisplayGuilds guilds={guild} position={position} />)
                     :
