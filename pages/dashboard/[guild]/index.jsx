@@ -52,7 +52,7 @@ export default function Home() {
   console.log(guildData)
   return (
     <>
-      <DisplayData guildData={guildData}>
+      <DisplayData guildData={guildData.guildData}>
 
       </DisplayData>
     </>
