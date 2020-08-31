@@ -2,12 +2,11 @@ import axios from "axios"
 
 export default async (req, res) => {
     const { guild } = req.query
-    console.log(guild)
     const { access, refresh } = req.body;
 
-    let allGuilds = await axios.post("https://receptioni.st/api/guilds/", { access, refresh })
+    let { data } = await axios.post("https://receptioni.st/api/guilds/", { access, refresh })
 
-    console.log(allGuilds)
+    console.log(data)
 
     res.json({ success: true })
     res.end()
