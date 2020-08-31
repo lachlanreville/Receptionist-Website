@@ -5,7 +5,7 @@ export default async (req, res) => {
     const { access, refresh } = req.body;
     let data
     try {
-        data = await axios.post("https://receptioni.st/api/guilds/", { access, refresh })
+        data = await axios.post("https://receptioni.st/api/guilds/", { access, refresh });
     }
     catch (err) {
         if (err.response.status == 401) {
