@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import TopNav from '../../../components/Navigation/TopNav/'
+import SideNav from '../../../components/Navigation/SideNav/'
 
 import React, { useEffect } from 'react';
 
@@ -9,13 +9,14 @@ export default function Home() {
   const { guild } = router.query
 
   useEffect(() => {
-    if (!guild) return;
-    console.log(guild)
+
   }, [guild])
 
   return (
     <>
-      <TopNav />
+      <SideNav type="server" guilid={guild}>
+
+      </SideNav>
     </>
   )
 }

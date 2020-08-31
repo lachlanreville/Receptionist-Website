@@ -50,7 +50,6 @@ export default (props) => {
 }
 
 const DisplayGuilds = (props) => {
-    console.log(props)
     return (
         <div className={styles.guildsMain}>
             {props.guilds.icon ?
