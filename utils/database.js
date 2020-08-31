@@ -2,7 +2,7 @@ import * as mysql from 'mysql-await';
 
 async function Connect() {
     var con = mysql.createConnection({
-        host: "58.169.144.89",
+        host: "db.receptioni.st",
         user: "root",
         password: "",
         database: "application bot",
