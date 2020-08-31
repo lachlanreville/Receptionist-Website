@@ -42,6 +42,8 @@ export default function Home() {
 
   }, [guild])
 
+  console.log(guildData)
+
   return (
     <>
       <DisplayData guildData={guildData}>
@@ -52,7 +54,7 @@ export default function Home() {
 }
 
 
-async function DisplayData(props) {
+function DisplayData(props) {
   return (
     <>
       {props.guildData ? <SideNav children={props.children} guildData={props.guildData} type="server" /> : <SideNav type="loading" />}
