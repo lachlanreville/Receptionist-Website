@@ -5,7 +5,7 @@ async function Connect() {
         host: "db.receptioni.st",
         user: "lachlan",
         password: "88VLp1d42tpEdPSR",
-        database: "application bot",
+        database: "receptionist",
         flags: "COMPRESS",
         charset: "UTF8MB4_UNICODE_CI"
     });
