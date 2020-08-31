@@ -8,7 +8,11 @@ export default async (req, res) => {
 
     let serverData = data.filter(c => { return c.id == guild })
 
-    console.log(serverData)
+    if (serverData.length == 0) {
+        res.statusCode = 401;
+        res.json({ success: false, message: "401 Unauthorized Access" })
+        res.end();
+    }
 
     res.json({ success: true })
     res.end()
