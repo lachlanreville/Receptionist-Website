@@ -4,6 +4,7 @@ import { useSpring, animated } from 'react-spring';
 import styles from "./sidenav.module.css"
 import classnames from "classnames"
 import axios from "axios"
+import { Column } from '../../Containers/'
 
 export default (props) => {
     const [data, setData] = useState(null)
