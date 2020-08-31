@@ -70,7 +70,7 @@ export default (props) => {
         )
     } else {
         return (
-            props.guildid
+            <h1>{props.guildid}</h1>
         )
     }
 
