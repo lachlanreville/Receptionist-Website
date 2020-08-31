@@ -12,7 +12,7 @@ export default (props) => {
             let access = window.localStorage.getItem("access_token")
             let refresh = window.localStorage.getItem("refresh_token")
 
-            axios.post("https://receptioni.st/api/users/guilds",
+            axios.post("https://receptioni.st/api/users/guilds/",
                 {
                     access,
                     refresh

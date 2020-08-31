@@ -69,11 +69,44 @@ export default (props) => {
                 </section>
             </>
         )
-    } else {
+    } else if (props.type == "server") {
         return (
-            <h1>{props.guildid}</h1>
+            <>
+                <animated.aside className={classnames(styles.sideNav)} style={{ width: transition.width }} >
+                    <ul className={classnames(styles.navDecoration, { [styles.hideElement]: toggle })}>
+                        <li>
+                            {props.guildData.icons ? <img src={"https://cdn.discordapp.com/icons/" + props.guildData.id + "/" + props.guildData.icon + ".webp?size=256"} width="96" height="96" alt="Logo" className={styles.image} /> :
+                                <img src="https://receptioni.st/img/Logo-3.png" width="96" height="96" alt="Logo" className={styles.image} />
+                            }
+                        </li>
+                        <li>
+                            {props.guildData ? <h2>{props.guildData.name}</h2> : <h2>Loading...</h2>}
+                        </li>
+                    </ul>
+                    <ul className={classnames(styles.navDecoration, { [styles.hideElement]: toggle })}>
+                        <li className={styles.buttons}><a className={styles.aCenter}>General</a></li>
+                        <li className={styles.buttons}><a className={styles.aCenter}>Applications</a></li>
+                        <li className={styles.buttons}><a className={styles.aCenter}>Submissions</a></li>
+
+                    </ul>
+                    <ul className={classnames(styles.bottomFlex, { [styles.hideElement]: toggle })}>
+                        <li className={styles.buttons}><a className={styles.aCenter}>Log Out</a></li>
+                    </ul>
+                </animated.aside>
+                <section>
+                    <div>
+                        <GrMenu size="40" className={styles.hide} onClick={() => setToggle(!toggle)} />
+                        <h1 style={{ margin: 5 }}>Your Servers:</h1>
+                    </div>
+                    {props.children}
+                </section>
+            </>
+        )
+    } else if (type == "loading") {
+        return (
+            < Column size="1" >
+                <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
+            </Column >
         )
     }
-
-
 }
