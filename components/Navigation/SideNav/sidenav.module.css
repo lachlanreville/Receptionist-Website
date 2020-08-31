@@ -49,6 +49,8 @@
 
 .aCenter {
     margin: auto;
+    color:white;
+    text-decoration: none;
 }
 
 .hideElement {

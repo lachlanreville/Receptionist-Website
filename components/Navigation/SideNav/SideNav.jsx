@@ -84,9 +84,9 @@ export default (props) => {
                         </li>
                     </ul>
                     <ul className={classnames(styles.navDecoration, { [styles.hideElement]: toggle })}>
-                        <li className={styles.buttons}><a className={styles.aCenter}>General</a></li>
+                        <li className={styles.buttons}><a className={styles.aCenter} href="./">General</a></li>
                         <li className={styles.buttons}><a className={styles.aCenter} href="./applications">Applications</a></li>
-                        <li className={styles.buttons}><a className={styles.aCenter}>Submissions</a></li>
+                        <li className={styles.buttons}><a className={styles.aCenter} href="./submissions">Submissions</a></li>
 
                     </ul>
                     <ul className={classnames(styles.bottomFlex, { [styles.hideElement]: toggle })}>
