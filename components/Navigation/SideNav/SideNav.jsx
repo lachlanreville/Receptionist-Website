@@ -12,7 +12,6 @@ export default (props) => {
     const transition = useSpring({
         width: toggle ? 0 : 200
     })
-    console.log(props)
 
     if (props.type == "user") {
         useEffect(() => {
