@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <>
-      <SideNav type="server" guilid={guild}>
+      <SideNav type="server" guildid={guild}>
 
       </SideNav>
     </>
