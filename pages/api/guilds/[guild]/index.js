@@ -30,6 +30,6 @@ export default async (req, res) => {
         res.end();
     }
 
-    res.json({ success: true, guildData: data })
+    res.json({ success: true, guildData: data[0] })
     res.end()
 }
