@@ -3,8 +3,8 @@ import * as mysql from 'mysql-await';
 async function Connect() {
     var con = mysql.createConnection({
         host: "db.receptioni.st",
-        user: "root",
-        password: "",
+        user: "lachlan",
+        password: "88VLp1d42tpEdPSR",
         database: "application bot",
         flags: "COMPRESS",
         charset: "UTF8MB4_UNICODE_CI"
