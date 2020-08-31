@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import SideNav from '../../../components/Navigation/SideNav/'
+import axios from "axios"
 
 import React, { useEffect, useState } from 'react';
 
