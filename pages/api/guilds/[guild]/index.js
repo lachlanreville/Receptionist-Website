@@ -22,7 +22,7 @@ export default async (req, res) => {
 
     data = data.data;
 
-    let serverData = data.filter(c => { return c.id == guild })
+    let serverData = data.filter(c => { return c.id != guild })
 
     if (serverData.length == 0) {
         res.statusCode = 401;
