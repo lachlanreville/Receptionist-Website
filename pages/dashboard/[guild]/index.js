@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import SideNav from '../../../components/Navigation/SideNav/'
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function Home() {
   const [guildData, setGuildData] = useState(null)
