@@ -102,7 +102,7 @@ export default (props) => {
                 </section>
             </>
         )
-    } else if (type == "loading") {
+    } else if (props.type == "loading") {
         return (
             < Column size="1" >
                 <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
