@@ -44,8 +44,9 @@ export default function Home() {
 
   return (
     <>
+      <DisplayData guildData={guildData}>
 
-
+      </DisplayData>
     </>
   )
 }
@@ -54,7 +55,7 @@ export default function Home() {
 async function DisplayData(props) {
   return (
     <>
-      {guildData ? <SideNav children={props.children} guildData={guildData} type="server" /> : <SideNav type="loading" />}
+      {props.guildData ? <SideNav children={props.children} guildData={props.guildData} type="server" /> : <SideNav type="loading" />}
     </>
   )
 }
