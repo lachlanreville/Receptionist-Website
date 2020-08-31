@@ -23,7 +23,7 @@ export default function Home() {
           refresh,
           guildid: guild
         }).then(data => {
-          setGuildData(data.data)
+          setGuildData(data.data);
         }).catch(function (error) {
           if (error.response) {
             console.log(error.response)
@@ -42,9 +42,10 @@ export default function Home() {
 
   }, [guild])
 
+  console.log(guildData)
   return (
     <>
-      <DisplayData guildData={guildData}>
+      <DisplayData guildData={guildData.server}>
 
       </DisplayData>
     </>

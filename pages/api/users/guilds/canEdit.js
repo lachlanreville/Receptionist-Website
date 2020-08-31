@@ -1,5 +1,7 @@
 import axios from "axios"
 
+import { getServerInfo } from '../../../../utils/database'
+
 export default async (req, res) => {
     const { body } = req;
 
@@ -46,8 +48,9 @@ export default async (req, res) => {
             res.json({ success: false, message: "401 Unauthorized Access" })
             res.end();
         }
+        let guildInfo = await getServerInfo(body.guildid)
 
-        res.json(newData)
+        res.json({ server: newData, database: guildInfo })
         res.end();
     }
 }
