@@ -6,7 +6,9 @@ export default async (req, res) => {
 
     let { data } = await axios.post("https://receptioni.st/api/guilds/", { access, refresh })
 
-    console.log(data)
+    let serverData = data.filter(c => { return c.id == guild })
+
+    console.log(serverData)
 
     res.json({ success: true })
     res.end()
