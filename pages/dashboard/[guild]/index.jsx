@@ -17,11 +17,10 @@ export default function Home() {
       let access = window.localStorage.getItem("access_token")
       let refresh = window.localStorage.getItem("refresh_token")
 
-      axios.post("https://receptioni.st/api/users/guilds/canEdit",
+      axios.post(`https://receptioni.st/api/guilds/${guild}/`,
         {
           access,
-          refresh,
-          guildid: guild
+          refresh
         }).then(data => {
           setGuildData(data.data);
         }).catch(function (error) {
