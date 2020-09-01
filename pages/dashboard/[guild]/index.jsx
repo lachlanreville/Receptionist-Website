@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import SideNav from '../../../components/Navigation/SideNav/'
-import { Row, Column } from '../../../components/Containers/'
+import { Row, Column, Break } from '../../../components/Containers/'
 import axios from "axios"
 
 import React, { useEffect, useState } from 'react';
@@ -55,6 +55,7 @@ export default function Home() {
     <>
       <DisplayData guildData={guildData}>
         <Row>
+          <Break height="100" />
           <Column size="7">
             <label forHtml="prefix">Prefixes:</label>
             <input id="prefix" name="prefix" type="text"></input>
