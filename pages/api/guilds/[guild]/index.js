@@ -29,7 +29,15 @@ export default async (req, res) => {
         res.json({ success: false, message: "401 Unauthorized Access" })
         res.end();
     }
+    let guildInfo;
+    try {
+        guildInfo = await axios.post("https://db.receptioni.st:3000/servers/" + guild);
+    }
+    catch (err) {
+        console.log(err)
+    }
+    guildInfo = guildInfo.data;
 
-    res.json({ success: true, guildData: serverData[0] })
+    res.json({ success: true, guildData: serverData[0], discordServer: guildInfo })
     res.end()
 }
