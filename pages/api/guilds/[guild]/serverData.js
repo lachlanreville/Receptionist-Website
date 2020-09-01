@@ -7,6 +7,7 @@ export default async (req, res) => {
     let data
     try {
         data = await getServerInfo(guild);
+        console.log(data)
     }
     catch (err) {
         res.statsuCode = 404;
