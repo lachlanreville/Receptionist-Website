@@ -24,7 +24,6 @@ export const getServerInfo = async (guildid) => {
     let sql = "SELECT prefix, premium, configRole, applicationsChannel, reviewerRole FROM servers WHERE guildid = ?";
 
     let data = await con.awaitQuery(sql, [guildid]);
-    con.end()
 
     return data[0];
 }
