@@ -38,6 +38,6 @@ export default async (req, res) => {
     }
     guildInfo = guildInfo.data;
 
-    res.json({ success: true, guildData: serverData[0], discordServer: guildInfo })
+    res.json({ success: true, guildData: serverData[0], discordData: guildInfo })
     res.end()
 }
