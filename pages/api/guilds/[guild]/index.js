@@ -31,7 +31,7 @@ export default async (req, res) => {
     }
     let guildInfo;
     try {
-        guildInfo = await axios.post("https://db.receptioni.st:3000/servers/" + guild);
+        guildInfo = await axios.post("http://db.receptioni.st:3000/servers/" + guild);
     }
     catch (err) {
         console.log(err)
