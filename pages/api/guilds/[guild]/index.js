@@ -45,7 +45,6 @@ export default async (req, res) => {
     catch (err) {
         console.log(err)
     }
-    console.log(guildDatabase)
 
     res.json({ success: true, guildData: serverData[0], discordData: guildInfo, guildDatabase: guildDatabase.data })
     res.end()
