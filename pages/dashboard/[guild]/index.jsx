@@ -54,8 +54,8 @@ export default function Home() {
   return (
     <>
       <DisplayData guildData={guildData}>
+        <Break height="100" />
         <Row>
-          <Break height="100" />
           <Column size="7">
             <label forHtml="prefix">Prefixes:</label>
             <input id="prefix" name="prefix" type="text"></input>
