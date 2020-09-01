@@ -38,6 +38,14 @@ export default async (req, res) => {
     }
     guildInfo = guildInfo.data;
 
-    res.json({ success: true, guildData: serverData[0], discordData: guildInfo })
+    let guildDatabase;
+    try {
+        guildDatabase = await axios.post(`https://receptioni.st/api/guilds/${guild}/serverData`)
+    }
+    catch (err) {
+        console.log(err)
+    }
+
+    res.json({ success: true, guildData: serverData[0], discordData: guildInfo, guildDatabase })
     res.end()
 }
