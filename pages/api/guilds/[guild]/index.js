@@ -47,6 +47,6 @@ export default async (req, res) => {
     }
     console.log(guildDatabase)
 
-    res.json({ success: true, guildData: serverData[0], discordData: guildInfo, guildDatabase })
+    res.json({ success: true, guildData: serverData[0], discordData: guildInfo, guildDatabase: guildDatabase.data })
     res.end()
 }
