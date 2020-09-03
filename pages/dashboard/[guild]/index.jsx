@@ -85,6 +85,6 @@ function DisplayData(props) {
 
 function DisplayPrefixes(props) {
   return (
-    <p>${props.prefix}</p>
+    <p>{props.prefix}</p>
   )
 }
