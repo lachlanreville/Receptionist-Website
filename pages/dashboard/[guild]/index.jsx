@@ -78,7 +78,7 @@ export default function Home() {
 function DisplayData(props) {
   return (
     <>
-      {props.guildData ? <SideNav children={props.children} guildData={props.guildData.guildData} type="server" title="Server Settings:" /> : <SideNav type="loading" />}
+      {props.guildData ? <SideNav children={props.children} guildData={props.guildData} type="server" title="Server Settings:" /> : <SideNav type="loading" />}
     </>
   )
 }
