@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react';
 
 export default function Home() {
   const [guildData, setGuildData] = useState(null)
+  const [guildDatabase, setGuildDatabase] = useState(null)
   const router = useRouter();
   const { guild } = router.query
 
@@ -23,7 +24,9 @@ export default function Home() {
           access,
           refresh
         }).then(data => {
-          setGuildData(data.data);
+          data = data.data;
+          setGuildDatabase(data.guildDatabase)
+          setGuildData(data.guildData);
         }).catch(function (error) {
           if (error.response) {
             console.log(error.response)
@@ -58,7 +61,11 @@ export default function Home() {
         <Row>
           <Column size="7">
             <label forHtml="prefix">Prefixes:</label>
-            <input id="prefix" name="prefix" type="text"></input>
+            <div>
+              <div contentEditable="true">
+                {guildDatabase ? JSON.parse(guildDatabase.prefix).map(c => <DisplayPrefixes prefix={c} />) : ""}
+              </div>
+            </div>
           </Column>
         </Row>
 
@@ -73,5 +80,11 @@ function DisplayData(props) {
     <>
       {props.guildData ? <SideNav children={props.children} guildData={props.guildData.guildData} type="server" title="Server Settings:" /> : <SideNav type="loading" />}
     </>
+  )
+}
+
+function DisplayPrefixes(props) {
+  return (
+    <p>${props.prefix}</p>
   )
 }
