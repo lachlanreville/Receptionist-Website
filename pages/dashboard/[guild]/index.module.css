@@ -1,0 +1,16 @@
+prefixDiv {
+    background-color: #053f5e;
+    height: 40px;
+    width: 400px;
+    display: flex;
+    justify-self: flex-start;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    outline: 0px solid transparent;
+}
+prefixes {
+    color: white;
+    margin: 6px 2px;
+    background-color: #115173;
+    padding: 6px 2px;
+}

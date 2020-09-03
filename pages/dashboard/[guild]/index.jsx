@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import SideNav from '../../../components/Navigation/SideNav/'
 import { Row, Column, Break } from '../../../components/Containers/'
 import axios from "axios"
+import * as styles from "./index.module.css"
 
 import React, { useEffect, useState } from 'react';
 
@@ -62,7 +63,7 @@ export default function Home() {
           <Column size="7">
             <label forHtml="prefix">Prefixes:</label>
             <div>
-              <div contentEditable="true">
+              <div contentEditable="true" className={styles.prefixDiv}>
                 {guildDatabase ? JSON.parse(guildDatabase.prefix).map(c => <DisplayPrefixes prefix={c} />) : ""}
               </div>
             </div>
@@ -85,6 +86,6 @@ function DisplayData(props) {
 
 function DisplayPrefixes(props) {
   return (
-    <p>{props.prefix}</p>
+    <p className={styles.prefixes}>{props.prefix}</p>
   )
 }
