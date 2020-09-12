@@ -1,13 +1,11 @@
-const axios = require('axios')
+import axios from "axios"
 
 export default async (req, res) => {
-    const { guild } = req.query;
+    const { guild } = req.query
     const { access, refresh } = req.body;
-
-    let adminCheck;
-
+    let data
     try {
-        adminCheck = await axios.post("https://receptioni.st/api/guilds/" + guild + "/hasAdmin", { access, refresh });
+        data = await axios.post("https://receptioni.st/api/guilds/", { access, refresh });
     }
     catch (err) {
         if (err.response.status == 401) {
@@ -22,8 +20,16 @@ export default async (req, res) => {
         }
     }
 
-    res.statusCode = 200;
-    res.json({ success: true, adminCheck })
-    res.end();
+    data = data.data;
 
+    let serverData = data.filter(c => { return c.id == guild })
+
+    if (serverData.length == 0) {
+        res.statusCode = 401;
+        res.json({ success: false, message: "401 Unauthorized Access" })
+        res.end();
+    }
+
+    res.json({ success: true })
+    res.end()
 }

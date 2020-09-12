@@ -28,11 +28,11 @@ export const getServerInfo = async (guildid) => {
     return data[0];
 }
 
-export const getApplications = async (guildid) => {
+export const getApplicationNames = async (guildid) => {
 
     let con = await Connect();
 
-    let sql = "SELECT applicationName, type, applicationLogChannel, applicationStartRole, applicationChannelName, applicationCategoryId, multipleChannelLogs, applicationResponseWait, applicationStartChannel FROM applications WHERE guildid = ?";
+    let sql = "SELECT applicationName, type FROM applications WHERE guildid = ?";
 
     let data = await con.awaitQuery(sql, [guildid]);
 
