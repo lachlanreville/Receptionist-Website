@@ -51,7 +51,7 @@ export const getApplication = async (guildid, applicationId) => {
     }
     let con = await Connect();
 
-    let sql = "SELECT applicationName, type, applicationLogChannel, applicationStartRole, applicationChannelName, applicationCategoryId, applicationResponseWait, applicationStartChannel FROM applications WHERE applicationID = ? AND guildid = ?";
+    let sql = "SELECT guildID, applicationID, applicationName, `type`, applicationLogChannel, applicationStartRole, applicationAcceptRole, applicationReviewRole, enabled, applicationChannelName, applicationCategoryId, applicationResponseWait, applicationStartChannel, applicationAcceptMessage, applicationDenyMessage FROM applications WHERE applicationID = ? AND guildid = ?";
 
     let data = await con.awaitQuery(sql, [applicationId, guildid]);
 
