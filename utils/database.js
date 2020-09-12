@@ -32,7 +32,7 @@ export const getApplicationNames = async (guildid) => {
 
     let con = await Connect();
 
-    let sql = "SELECT applicationName, type FROM applications WHERE guildid = ?";
+    let sql = "SELECT applicationName, applicationid, type FROM applications WHERE guildid = ?";
 
     let data = await con.awaitQuery(sql, [guildid]);
 
