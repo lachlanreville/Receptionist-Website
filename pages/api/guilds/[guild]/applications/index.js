@@ -22,7 +22,7 @@ export default async (req, res) => {
             res.end();
         }
     }
-    console.log(adminCheck)
+    adminCheck = adminCheck.data;
     if (adminCheck.success == true) {
         let applications;
         try {
