@@ -1,4 +1,5 @@
 const axios = require('axios')
+const { getApplicationNames } = require('../../../../../utils/database')
 
 export default async (req, res) => {
     const { guild } = req.query;
@@ -22,8 +23,23 @@ export default async (req, res) => {
         }
     }
 
-    res.statusCode = 200;
-    res.json({ success: true, adminCheck })
-    res.end();
+    if (adminCheck.success == true) {
+        let applications;
+        try {
+            applications = await getApplicationNames(guild)
+        }
+        catch (err) {
+            res.statusCode = 500;
+            res.json({ success: false, message: "500 Internal Server Error" })
+            res.end();
+        }
+        res.statusCode = 200;
+        res.json({ success: true, applicationNames: applications });
+        res.end();
+    } else {
+        res.statusCode = 401;
+        res.json({ success: false, message: "401 Unauthorized Access" })
+        res.end();
+    }
 
 }
