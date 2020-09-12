@@ -4,7 +4,7 @@ const { getApplication } = require('../../../../../../utils/database')
 export default async (req, res) => {
     const { guild, applicationid } = req.query;
     const { access, refresh } = req.body;
-
+    console.log(applicationid)
     let adminCheck;
 
     try {
