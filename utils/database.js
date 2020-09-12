@@ -46,7 +46,7 @@ export const getApplicationNames = async (guildid) => {
 
 
 export const getApplication = async (guildid, applicationId) => {
-    if (!guildid || applicationId) {
+    if (!guildid || !applicationId) {
         return { success: false }
     }
     let con = await Connect();
