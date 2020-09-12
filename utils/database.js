@@ -18,6 +18,9 @@ async function Connect() {
 }
 
 export const getServerInfo = async (guildid) => {
+    if (!guildid) {
+        return { success: false }
+    }
 
     let con = await Connect();
 
@@ -29,12 +32,28 @@ export const getServerInfo = async (guildid) => {
 }
 
 export const getApplicationNames = async (guildid) => {
-
+    if (!guildid) {
+        return { success: false }
+    }
     let con = await Connect();
 
     let sql = "SELECT applicationName, applicationId, type FROM applications WHERE guildid = ?";
 
     let data = await con.awaitQuery(sql, [guildid]);
+
+    return data;
+}
+
+
+export const getApplication = async (guildid, applicationId) => {
+    if (!guildid || applicationId) {
+        return { success: false }
+    }
+    let con = await Connect();
+
+    let sql = "SELECT applicationName, type, applicationLogChannel, applicationStartRole, applicationChannelName, applicationCategoryId, applicationResponseWait, applicationStartChannel FROM applications WHERE applicationID = ? AND guildid = ?";
+
+    let data = await con.awaitQuery(sql, [applicationId, guildid]);
 
     return data;
 }
