@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import SideNav from '../../../components/Navigation/SideNav/'
-import { Row, Column, Break } from '../../../components/Containers/'
+import { Row, Column, Break } from '../../../../components/Containers/'
 import axios from "axios"
 import * as styles from "./index.module.css"
 
