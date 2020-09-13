@@ -71,7 +71,7 @@ function DisplayData(props) {
 const DisplayApplications = (props) => {
     console.log(props)
     return (
-        <Column size="3" className={styles.applicationBox} key={props.position}>
+        <Column size="5" className={styles.applicationBox} key={props.position}>
             <a className={styles.applicationName} href={"https://receptioni.st/dashboard/" + props.guild + "/applications/" + props.application.applicationId}>{props.application.applicationName}</a>
         </Column>
     )

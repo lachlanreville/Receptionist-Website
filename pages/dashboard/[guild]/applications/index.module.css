@@ -2,9 +2,10 @@
     color: white;
     text-decoration: none;
     font-size: 32px;
+    border: 1px solid white;
+    border-radius: 1em;
 }
 
 .applicationBox {
-    border: 1px solid white;
-    border-radius: 1em;
+    background: #053f5e;
 }
