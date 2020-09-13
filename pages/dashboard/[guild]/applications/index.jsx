@@ -10,12 +10,16 @@ import React, { useEffect, useState } from 'react';
 export default function Home() {
     const [applications, setApplications] = useState(null)
     const [serverData, setServerData] = useState(null)
+    const [newApp, setNewApp] = useState(null)
     const router = useRouter();
-    console.log(router)
+
     const { guild } = router.query
 
     useEffect(() => {
         if (!guild) return;
+        if (router.query.application) {
+            setNewApp(router.query.application)
+        }
 
         const getApplications = async () => {
             let access = window.localStorage.getItem("access_token")
@@ -48,6 +52,20 @@ export default function Home() {
 
     }, [guild])
 
+    const DisplayApplications = (props) => {
+        return (
+            <Column size="5" key={props.position}>
+                <a className={styles.applicationName} onClick={setNewApp(props.application.applicationId)} href={"#"} > {props.application.applicationName}</a>
+            </Column>
+        )
+    }
+    useEffect(() => {
+        if (!newApp) return;
+
+        router.push('?application=' + newApp, undefined, { shallow: true })
+
+    }, [newApp])
+
     return (
         <>
             <DisplayData guildData={serverData}>
@@ -68,13 +86,5 @@ function DisplayData(props) {
         <>
             {props.guildData ? <SideNav children={props.children} guildData={props.guildData} type="server" title="Applications:" /> : <SideNav type="loading" />}
         </>
-    )
-}
-
-const DisplayApplications = (props) => {
-    return (
-        <Column size="5" key={props.position}>
-            <a className={styles.applicationName} href={"https://receptioni.st/dashboard/" + props.guild + "/applications#" + props.application.applicationId}>{props.application.applicationName}</a>
-        </Column>
     )
 }
