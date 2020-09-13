@@ -34,7 +34,7 @@ export default async (req, res) => {
             res.end();
         }
         res.statusCode = 200;
-        res.json({ success: true, applicationNames: applications, serverData: adminCheck });
+        res.json({ success: true, applicationNames: applications, serverData: adminCheck.serverData[0] });
         res.end();
     } else {
         res.statusCode = 401;
