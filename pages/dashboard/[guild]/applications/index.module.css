@@ -1,0 +1,10 @@
+applicationName {
+    color: white;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+applicationBox {
+    border: 1px solid white;
+    border-radius: 1em;
+}
