@@ -59,7 +59,7 @@ export default function Home() {
             </Column>
         )
     }
-    //wont fuckin install on vercel
+
     useEffect(() => {
         console.log(newApp)
         if (!newApp) return;
