@@ -51,8 +51,7 @@ export default function Home() {
             <DisplayData guildData={serverData}>
                 <Break height="100" />
                 <Row>
-                    <Column size="7">
-                    </Column>
+                    {applications.map(c => { <DisplayApplications application={c} /> })}
                 </Row>
 
             </DisplayData>
@@ -64,7 +63,15 @@ export default function Home() {
 function DisplayData(props) {
     return (
         <>
-            {props.guildData ? <SideNav children={props.children} guildData={props.guildData} type="server" title="Server Settings:" /> : <SideNav type="loading" />}
+            {props.guildData ? <SideNav children={props.children} guildData={props.guildData} type="server" title="Applications:" /> : <SideNav type="loading" />}
         </>
+    )
+}
+
+function DisplayApplications(props) {
+    return (
+        <div>
+            <a href={"https://receptioni.st/dashboard/" + guild + "/applications/" + props.application.applicationId}><h1>{props.application.applicationName}</h1></a>
+        </div>
     )
 }
