@@ -62,6 +62,7 @@ export default function Home() {
 
 
 function DisplayData(props) {
+    console.log(props)
     return (
         <>
             {props.guildData ? <SideNav children={props.children} guildData={props.guildData} type="server" title="Applications:" /> : <SideNav type="loading" />}
@@ -70,7 +71,6 @@ function DisplayData(props) {
 }
 
 const DisplayApplications = (props) => {
-    console.log(props)
     return (
         <Column size="5" key={props.position}>
             <a className={styles.applicationName} href={"https://receptioni.st/dashboard/" + props.guild + "/applications#" + props.application.applicationId}>{props.application.applicationName}</a>
