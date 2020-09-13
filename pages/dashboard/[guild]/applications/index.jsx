@@ -56,7 +56,7 @@ export default function Home() {
     const DisplayApplications = (props) => {
         return (
             <Column size="5" key={props.position}>
-                <a className={styles.applicationName} onClick={() => setNewApp(props.application.applicationId)} > {props.application.applicationName}</a>
+                <a className={styles.applicationName} onClick={() => router.push(`?application=${props.application.applicationId}`)} > {props.application.applicationName}</a>
             </Column>
         )
     }
