@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import { Router, useRouter } from 'next/router'
 import SideNav from '../../../../components/Navigation/SideNav/'
 import { Row, Column, Break } from '../../../../components/Containers/'
 import axios from "axios"
@@ -22,7 +22,6 @@ export default function Home() {
         if (router.query.application) {
             setNewApp(router.query.application)
         }
-        console.log(router)
 
         const getApplications = async () => {
             let access = window.localStorage.getItem("access_token")
@@ -66,7 +65,7 @@ export default function Home() {
         console.log(newApp)
         if (!newApp) return;
 
-        router.push(`?application=${newApp}`, undefined, { shallow: true })
+        Router.push(`?application=${newApp}`, undefined, { shallow: true })
 
     }, [newApp])
 
