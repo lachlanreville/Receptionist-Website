@@ -61,6 +61,7 @@ export default function Home() {
     }
     //wont fuckin install on vercel
     useEffect(() => {
+        console.log(newApp)
         if (!newApp) return;
 
         router.push('?application=' + newApp, undefined, { shallow: true })
