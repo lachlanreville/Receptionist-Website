@@ -64,8 +64,8 @@ export default function Home() {
     useEffect(() => {
         console.log(newApp)
         if (!newApp) return;
-        console.log(Router)
-        Router.push(`?application=${newApp}`, undefined, { shallow: true })
+        console.log(router)
+        router.push(`?application=${newApp}`, undefined, { shallow: true })
 
     }, [newApp])
 
