@@ -64,7 +64,7 @@ export default function Home() {
         console.log(newApp)
         if (!newApp) return;
 
-        router.push('?application=' + newApp, '?application=' + newApp, { shallow: true })
+        router.push(`?application=${newApp}`, undefined, { shallow: true })
 
     }, [newApp])
 
