@@ -49,12 +49,8 @@ export default function Home() {
         <>
             <DisplayData guildData={serverData}>
                 <Break height="100" />
-                <Row>
-                    <Column size="7">
-                        {applications ? applications.map(c => { <DisplayApplications application={c} /> }) : <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
-                        }
-                    </Column>
-                </Row>
+                {applications ? applications.map(c => { <DisplayApplications application={c} /> }) : <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
+                }
 
             </DisplayData>
         </>
