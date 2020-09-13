@@ -71,7 +71,6 @@ export default function Home() {
 
     return (
         <>
-            <div></div>
             <DisplayData guildData={serverData}>
                 <Break height="50" />
                 <Row>
