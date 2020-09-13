@@ -10,13 +10,12 @@ import React, { useEffect, useState } from 'react';
 export default function Home() {
     const [applications, setApplications] = useState(null)
     const [serverData, setServerData] = useState(null)
+    const [guildInfo, setGuildInfo] = useState(null)
     const router = useRouter();
 
     const { guild } = router.query
 
     useEffect(() => {
-
-        // repush so vercel works...
         if (!guild) return;
 
         const getApplications = async () => {
@@ -31,7 +30,7 @@ export default function Home() {
                     data = data.data;
                     setApplications(data.applicationNames)
                     setServerData(data.serverData)
-                    console.log(data)
+                    setGuildInfo(data.guildInfo)
                 }).catch(function (error) {
                     if (error.response) {
                         console.log(error.response)
@@ -105,7 +104,6 @@ export default function Home() {
 
 
 function DisplayData(props) {
-    console.log(props)
     return (
         <>
             {props.guildData ? <SideNav children={props.children} guildData={props.guildData} type="server" title="Applications:" /> : <SideNav type="loading" />}
