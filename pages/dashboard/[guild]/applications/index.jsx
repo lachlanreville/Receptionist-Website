@@ -50,8 +50,10 @@ export default function Home() {
             <DisplayData guildData={serverData}>
                 <Break height="100" />
                 <Row>
-                    {applications ? applications.map(c => { <DisplayApplications application={c} /> }) : <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
-                    }
+                    <Column size="7">
+                        {applications ? applications.map(c => { <DisplayApplications application={c} /> }) : <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
+                        }
+                    </Column>
                 </Row>
 
             </DisplayData>
@@ -72,7 +74,7 @@ function DisplayApplications(props) {
     console.log(props)
     return (
         <div>
-            <a href={"https://receptioni.st/dashboard/" + guild + "/applications/" + props.application.applicationId}><h1>{props.application.applicationName}</h1></a>
+            <a href={"https://receptioni.st/dashboard/" + guild + "/applications/" + props.application.applicationId}>{props.application.applicationName}</a>
         </div>
     )
 }
