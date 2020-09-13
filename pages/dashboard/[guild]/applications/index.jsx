@@ -97,6 +97,13 @@ export default function Home() {
                     {applications ? applications.map((application, position) => <DisplayApplications guild={guild} application={application} position={position} />) : <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
                     }
                 </Row>
+                <Break height="40" />
+                <Row>
+                    <form method="post">
+                        <label forHTML="applicationName">Application Name</label>
+                        <input type="text" name="applicationName"></input>
+                    </form>
+                </Row>
             </DisplayData>
         </>
     )
