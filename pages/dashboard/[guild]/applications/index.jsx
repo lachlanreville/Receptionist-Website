@@ -50,11 +50,9 @@ export default function Home() {
         <>
             <DisplayData guildData={serverData}>
                 <Break height="100" />
-                <Row style="6">
-                    <aside style={{ width: "200px", backgroundColor: "#053f5e" }}></aside>
-                </Row>
-                <Row style="2">
-                    <aside style={{ width: "200px", backgroundColor: "#053f5e" }}></aside>
+                <Row>
+                    {applications ? applications.map((application, position) => <DisplayApplications guild={guild} application={application} position={position} />) : <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
+                    }
                 </Row>
             </DisplayData>
         </>
@@ -73,7 +71,7 @@ function DisplayData(props) {
 const DisplayApplications = (props) => {
     console.log(props)
     return (
-        <Column size="5" key={props.position}>
+        <Column size="4" key={props.position}>
             <a className={styles.applicationName} href={"https://receptioni.st/dashboard/" + props.guild + "/applications/" + props.application.applicationId}>{props.application.applicationName}</a>
         </Column>
     )
