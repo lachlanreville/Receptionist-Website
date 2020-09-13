@@ -56,7 +56,7 @@ export default function Home() {
     const DisplayApplications = (props) => {
         return (
             <Column size="5" key={props.position}>
-                <a className={styles.applicationName} href="#" onClick={() => router.push(router.pathname + `?application=${props.application.applicationId}`, `/dashboard/${guild}/applications?application=${props.application.applicationId}`, { shallow: true })} > {props.application.applicationName}</a>
+                <a className={styles.applicationName} href="/" onClick={() => router.push(router.pathname + `?application=${props.application.applicationId}`, `/dashboard/${guild}/applications?application=${props.application.applicationId}`, { shallow: true })} > {props.application.applicationName}</a>
             </Column>
         )
     }
