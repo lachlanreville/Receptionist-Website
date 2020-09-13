@@ -55,10 +55,11 @@ export default function Home() {
     const DisplayApplications = (props) => {
         return (
             <Column size="5" key={props.position}>
-                <a className={styles.applicationName} onClick={executeFunction(props.application)} href={"#"} > {props.application.applicationName}</a>
+                <a className={styles.applicationName} onClick={setNewApp(props.application.applicationId)} href={"#"} > {props.application.applicationName}</a>
             </Column>
         )
     }
+    console.log(newApp)
     //wont fuckin install on vercel
     useEffect(() => {
         if (!newApp) return;
@@ -66,9 +67,6 @@ export default function Home() {
         router.push('?application=' + newApp, undefined, { shallow: true })
 
     }, [newApp])
-    function executeFunction(cat) {
-        console.log(cat)
-    }
 
     return (
         <>
