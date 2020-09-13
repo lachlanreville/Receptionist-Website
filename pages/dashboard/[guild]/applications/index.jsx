@@ -29,7 +29,7 @@ export default function Home() {
                     data = data.data;
                     console.log(data)
                     setApplications(data.applicationNames)
-                    setServerData(data.serverData)
+                    setServerData(data.serverData.serverData[0])
                 }).catch(function (error) {
                     if (error.response) {
                         console.log(error.response)
