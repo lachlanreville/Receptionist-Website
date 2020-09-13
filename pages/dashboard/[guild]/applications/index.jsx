@@ -45,7 +45,6 @@ export default function Home() {
 
     }, [guild])
 
-    console.log(applications)
     return (
         <>
             <DisplayData guildData={serverData}>
@@ -70,6 +69,7 @@ function DisplayData(props) {
 }
 
 function DisplayApplications(props) {
+    console.log(props)
     return (
         <div>
             <a href={"https://receptioni.st/dashboard/" + guild + "/applications/" + props.application.applicationId}><h1>{props.application.applicationName}</h1></a>
