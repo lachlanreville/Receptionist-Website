@@ -63,7 +63,7 @@ export default function Home() {
         let refresh = window.localStorage.getItem("refresh_token")
 
         let applicationId = router.query.application;
-        setTimeout(() => {
+        const getSpecificAppliction = async () => {
             axios.post(`https://receptioni.st/api/guilds/${guild}/applications/${applicationId}/`,
                 {
                     access,
@@ -78,12 +78,13 @@ export default function Home() {
                             window.location.href = "/dashboard/"
                         }
                         if (error.response.status == 429) {
-                            setTimeout(getGuilds, 3000)
+                            setTimeout(getSpecificAppliction, 3000)
                         }
                     }
 
                 })
-        }, 1000)
+        }
+        setTimeout(getSpecificAppliction, 3000)
 
     }, [router])
 
