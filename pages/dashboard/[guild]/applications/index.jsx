@@ -59,7 +59,7 @@ export default function Home() {
             </Column>
         )
     }
-
+    // cunt FUCKING WORK
     useEffect(() => {
         console.log(newApp)
         if (!newApp) return;
