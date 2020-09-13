@@ -11,6 +11,7 @@ export default function Home() {
     const [applications, setApplications] = useState(null)
     const [serverData, setServerData] = useState(null)
     const router = useRouter();
+    console.log(router.query)
     const { guild } = router.query
 
     useEffect(() => {
@@ -72,7 +73,7 @@ const DisplayApplications = (props) => {
     console.log(props)
     return (
         <Column size="5" key={props.position}>
-            <a className={styles.applicationName} href={"https://receptioni.st/dashboard/" + props.guild + "/applications/" + props.application.applicationId}>{props.application.applicationName}</a>
+            <a className={styles.applicationName} href={"https://receptioni.st/dashboard/" + props.guild + "/applications?application" + props.application.applicationId}>{props.application.applicationName}</a>
         </Column>
     )
 }
