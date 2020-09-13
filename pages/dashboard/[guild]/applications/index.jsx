@@ -16,6 +16,8 @@ export default function Home() {
     const { guild } = router.query
 
     useEffect(() => {
+
+        // repush so vercel works...
         if (!guild) return;
         if (router.query.application) {
             setNewApp(router.query.application)
