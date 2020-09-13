@@ -4,8 +4,10 @@
     font-size: 32px;
     border: 1px solid white;
     border-radius: 1em;
+    text-align: center;
+    text-align: center;
 }
 
 .applicationBox {
-    background: #053f5e;
+    margin: 5px;
 }
