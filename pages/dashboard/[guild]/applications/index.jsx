@@ -11,7 +11,7 @@ export default function Home() {
     const [applications, setApplications] = useState(null)
     const [serverData, setServerData] = useState(null)
     const router = useRouter();
-    console.log(router.query)
+    console.log(router)
     const { guild } = router.query
 
     useEffect(() => {
