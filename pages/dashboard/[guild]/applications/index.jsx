@@ -63,6 +63,9 @@ export default function Home() {
 
     useEffect(() => {
         if (!router.query.application) return;
+        let access = window.localStorage.getItem("access_token")
+        let refresh = window.localStorage.getItem("refresh_token")
+
         let applicationId = router.query.application;
         axios.post(`https://receptioni.st/api/guilds/${guild}/applications/${applicationId}/`,
             {
