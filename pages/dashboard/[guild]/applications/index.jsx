@@ -10,7 +10,6 @@ import React, { useEffect, useState } from 'react';
 export default function Home() {
     const [applications, setApplications] = useState(null)
     const [serverData, setServerData] = useState(null)
-    const [newApp, setNewApp] = useState(null)
     const router = useRouter();
 
     const { guild } = router.query
@@ -19,9 +18,6 @@ export default function Home() {
 
         // repush so vercel works...
         if (!guild) return;
-        if (router.query.application) {
-            setNewApp(router.query.application)
-        }
 
         const getApplications = async () => {
             let access = window.localStorage.getItem("access_token")
@@ -42,7 +38,7 @@ export default function Home() {
                             window.location.href = "/dashboard/"
                         }
                         if (error.response.status == 429) {
-                            setTimeout(getGuilds, 3000)
+                            setTimeout(getApplications, 3000)
                         }
                     }
 
