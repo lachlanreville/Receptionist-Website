@@ -33,8 +33,18 @@ export default async (req, res) => {
             res.json({ success: false, message: "500 Internal Server Error" })
             res.end();
         }
+
+        let guildInfo;
+        try {
+            guildInfo = await axios.post("http://db.receptioni.st:3000/servers/" + guild);
+        }
+        catch (err) {
+            console.log(err)
+        }
+        guildInfo = guildInfo.data;
+
         res.statusCode = 200;
-        res.json({ success: true, applicationNames: applications, serverData: adminCheck.serverData[0] });
+        res.json({ success: true, applicationNames: applications, serverData: adminCheck.serverData[0], guildInfo });
         res.end();
     } else {
         res.statusCode = 401;
