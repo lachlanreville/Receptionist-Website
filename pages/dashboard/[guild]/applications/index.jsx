@@ -62,7 +62,27 @@ export default function Home() {
     }
 
     useEffect(() => {
-        console.log(router)
+        if (!router.query.application) return;
+        let applicationId = router.query.application;
+        axios.post(`https://receptioni.st/api/guilds/${guild}/applications/${applicationId}/`,
+            {
+                access,
+                refresh
+            }).then(data => {
+                data = data.data;
+                console.log(data)
+            }).catch(function (error) {
+                if (error.response) {
+                    console.log(error.response)
+                    if (error.response.status == 401) {
+                        window.location.href = "/dashboard/"
+                    }
+                    if (error.response.status == 429) {
+                        setTimeout(getGuilds, 3000)
+                    }
+                }
+
+            })
 
     }, [router])
 
