@@ -27,6 +27,7 @@ export default function Home() {
                     refresh
                 }).then(data => {
                     data = data.data;
+                    console.log(data)
                     setApplications(data.applicationNames)
                     setServerData(data.serverData)
                 }).catch(function (error) {
