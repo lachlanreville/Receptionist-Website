@@ -51,10 +51,10 @@ export default function Home() {
             <DisplayData guildData={serverData}>
                 <Break height="100" />
                 <Row style="6">
-                    <aside style={{ width: "200px", backgroundColor: "053f5e" }}></aside>
+                    <aside style={{ width: "200px", backgroundColor: "#053f5e" }}></aside>
                 </Row>
                 <Row style="2">
-                    <aside style={{ width: "200px", backgroundColor: "053f5e" }}></aside>
+                    <aside style={{ width: "200px", backgroundColor: "#053f5e" }}></aside>
                 </Row>
             </DisplayData>
         </>
