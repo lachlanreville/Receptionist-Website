@@ -70,11 +70,11 @@ function DisplayData(props) {
     )
 }
 
-function DisplayApplications(props) {
+const DisplayApplications = (props) => {
     console.log(props)
     return (
-        <div>
+        <>
             <a href={"https://receptioni.st/dashboard/" + guild + "/applications/" + props.application.applicationId}>{props.application.applicationName}</a>
-        </div>
+        </>
     )
 }
