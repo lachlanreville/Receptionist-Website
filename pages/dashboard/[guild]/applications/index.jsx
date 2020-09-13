@@ -20,6 +20,7 @@ export default function Home() {
         if (router.query.application) {
             setNewApp(router.query.application)
         }
+        console.log(router)
 
         const getApplications = async () => {
             let access = window.localStorage.getItem("access_token")
@@ -31,7 +32,6 @@ export default function Home() {
                     refresh
                 }).then(data => {
                     data = data.data;
-                    console.log(data)
                     setApplications(data.applicationNames)
                     setServerData(data.serverData)
                 }).catch(function (error) {
