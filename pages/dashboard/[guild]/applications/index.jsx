@@ -90,7 +90,11 @@ export default function Home() {
     }, [router])
 
     const ApplicationForm = (props) => {
-
+        return (
+            <>
+                {props.application ? <h1>Editing {props.application.applicationName}</h1> : <h1>Cunt</h1>}
+            </>
+        )
     }
 
     return (
