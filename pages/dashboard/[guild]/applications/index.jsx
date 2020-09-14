@@ -71,7 +71,7 @@ export default function Home() {
                     refresh
                 }).then(data => {
                     data = data.data;
-                    setSpecificApplication(data)
+                    setSpecificApplication(data.applicationNames[0])
                 }).catch(function (error) {
                     if (error.response) {
                         console.log(error.response)
