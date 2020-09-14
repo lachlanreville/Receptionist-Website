@@ -17,7 +17,7 @@ export default () => {
                 <Row>
                     <Column size="3">
                         <h1>Receptionist</h1>
-                        <p>Bringing Tickets And Applications To Your Discord Server With Ease</p>
+                        <p>Bringing Applications To Your Discord Server With Ease</p>
                     </Column>
                     <Column size="3">
                         <img src="https://receptioni.st/img/Logo-3.png" width="256" height="256" alt="Logo" style={{ margin: "auto" }} />

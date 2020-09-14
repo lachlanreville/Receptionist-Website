@@ -48,6 +48,7 @@ export default function Home() {
         getApplications()
 
     }, [guild])
+    const [specificApplication, setSpecificApplication] = useState(null)
 
     const DisplayApplications = (props) => {
         return (
@@ -70,7 +71,7 @@ export default function Home() {
                     refresh
                 }).then(data => {
                     data = data.data;
-                    console.log(data)
+                    setSpecificApplication(data)
                 }).catch(function (error) {
                     if (error.response) {
                         console.log(error.response)
@@ -88,6 +89,10 @@ export default function Home() {
 
     }, [router])
 
+    const ApplicationForm = (props) => {
+
+    }
+
     return (
         <>
             <div></div>
@@ -98,12 +103,7 @@ export default function Home() {
                     }
                 </Row>
                 <Break height="40" />
-                <Row>
-                    <form method="post">
-                        <label forHTML="applicationName">Application Name</label>
-                        <input type="text" name="applicationName"></input>
-                    </form>
-                </Row>
+                {specificApplication ? <ApplicationForm application={specificApplication} /> : <h1>No application choosen</h1>}
             </DisplayData>
         </>
     )
