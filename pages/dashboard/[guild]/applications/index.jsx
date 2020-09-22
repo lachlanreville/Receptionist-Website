@@ -4,7 +4,6 @@ import SideNav from '../../../../components/Navigation/SideNav/'
 import { Row, Column, Break } from '../../../../components/Containers/'
 import axios from "axios"
 import * as styles from "./index.module.css"
-import { useForm } from "react-hook-form"
 
 import React, { useEffect, useState } from 'react';
 
@@ -14,7 +13,6 @@ export default function Home() {
     const [guildInfo, setGuildInfo] = useState(null)
     const [specificApplication, setSpecificApplication] = useState(null)
     const router = useRouter();
-    const { register, handleSubmit } = useForm();
 
     const { guild } = router.query
 
@@ -91,26 +89,6 @@ export default function Home() {
         getSpecificAppliction()
 
     }, [router])
-
-    const onSubmit = data => console.log(data)
-
-    const ApplicationForm = (props) => {
-        if (!props.application) return (<h1>No Application Data</h1>)
-        return (
-            <>
-                <h1>Editing {props.application.applicationName}</h1>
-                <div>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-
-
-                        <Row>
-                            <input type="submit" value="Apply Changes!" />
-                        </Row>
-                    </form>
-                </div>
-            </>
-        )
-    }
 
     return (
         <>
