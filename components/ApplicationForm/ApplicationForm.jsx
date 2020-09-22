@@ -24,7 +24,7 @@ export default (props) => {
                         </select>
                     </div>
                     <div className="formGroup">
-                        <Switch onChange={setEnabled(!enabled)} checked={enabled} />
+                        <Switch onChange={(checked) => setEnabled(checked)} checked={enabled} />
                     </div>
                     <div className="formGroup">
 
