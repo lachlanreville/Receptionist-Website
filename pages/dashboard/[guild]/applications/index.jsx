@@ -4,6 +4,7 @@ import SideNav from '../../../../components/Navigation/SideNav/'
 import { Row, Column, Break } from '../../../../components/Containers/'
 import axios from "axios"
 import * as styles from "./index.module.css"
+import { useForm } from "react-hook-form"
 
 import React, { useEffect, useState } from 'react';
 
@@ -11,7 +12,9 @@ export default function Home() {
     const [applications, setApplications] = useState(null)
     const [serverData, setServerData] = useState(null)
     const [guildInfo, setGuildInfo] = useState(null)
+    const [specificApplication, setSpecificApplication] = useState(null)
     const router = useRouter();
+    const { register, handleSubmit } = useForm();
 
     const { guild } = router.query
 
@@ -48,7 +51,7 @@ export default function Home() {
         getApplications()
 
     }, [guild])
-    const [specificApplication, setSpecificApplication] = useState(null)
+
 
     const DisplayApplications = (props) => {
         return (
@@ -88,14 +91,20 @@ export default function Home() {
         setTimeout(getSpecificAppliction, 3000)
 
     }, [router])
+    const onSubmit = data => console.log(data)
 
     const ApplicationForm = (props) => {
+        if (!props.application) return (<h1>No Application Data</h1>)
         return (
             <>
-                {props.application ? <h1>Editing {props.application.applicationName}</h1> : <h1>Cunt</h1>}
+                <h1>Editing {props.application.applicationName}</h1>
                 <div>
-                    <form>
-                        <h1>Heres where the shit goes cunts</h1>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+
+
+                        <Row>
+                            <input type="submit" value="Apply Changes!" />
+                        </Row>
                     </form>
                 </div>
             </>
@@ -105,7 +114,7 @@ export default function Home() {
     return (
         <>
             <div></div>
-            <DisplayData guildData={serverData}>
+            <DisplayData guildData={guildData}>
                 <Break height="50" />
                 <Row>
                     {applications ? applications.map((application, position) => <DisplayApplications guild={guild} application={application} position={position} />) : <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
