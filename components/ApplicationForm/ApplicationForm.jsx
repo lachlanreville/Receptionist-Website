@@ -6,7 +6,7 @@ import { useState } from 'react'
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
     const { register, handleSubmit } = useForm();
-    const [enabled, setEnabled] = useState({(props.application.enabled == 1) ? true : false});
+    const [enabled, setEnabled] = useState((props.application.enabled == 1) ? true : false);
 
     const onSubmit = data => console.log(data)
 
