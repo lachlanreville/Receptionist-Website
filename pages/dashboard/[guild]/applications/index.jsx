@@ -88,9 +88,10 @@ export default function Home() {
 
                 })
         }
-        setTimeout(getSpecificAppliction, 3000)
+        getSpecificAppliction
 
     }, [router])
+
     const onSubmit = data => console.log(data)
 
     const ApplicationForm = (props) => {
@@ -113,8 +114,7 @@ export default function Home() {
 
     return (
         <>
-            <div></div>
-            <DisplayData guildData={guildData}>
+            <DisplayData guildData={serverData}>
                 <Break height="50" />
                 <Row>
                     {applications ? applications.map((application, position) => <DisplayApplications guild={guild} application={application} position={position} />) : <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
