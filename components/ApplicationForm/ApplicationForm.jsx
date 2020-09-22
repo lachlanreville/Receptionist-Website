@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form"
-import { DisplayChannels } from "./components/DisplayChannels"
+import DisplayChannels from "./components/DisplayChannels"
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
