@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form"
+import { DisplayChannels } from "./components/DisplayChannels"
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
@@ -15,7 +16,9 @@ export default (props) => {
                         <input type="text" name="applicationName" value={props.application.applicationName} />
                     </div>
                     <div className="formGroup">
-
+                        <select name="applicationLogChannel">
+                            <DisplayChannels selectedChannel={props.application.applicationLogChannel} allChannels={props.server.channels} />
+                        </select>
                     </div>
                     <div className="formGroup">
 
