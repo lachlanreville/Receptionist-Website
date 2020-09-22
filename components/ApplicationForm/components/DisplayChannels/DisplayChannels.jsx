@@ -1,7 +1,7 @@
 
 export default (props) => {
 
-    return props.server.map(c => <Channels channel={c} selectedChannel={props.selectedChannel} />)
+    return props.allChannels.map(c => <Channels channel={c} selectedChannel={props.selectedChannel} />)
 }
 
 const Channels = (props) => {
