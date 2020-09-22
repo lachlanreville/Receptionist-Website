@@ -1,6 +1,8 @@
 
 export default (props) => {
 
+    if(!props.allChannels || !props.selectedChannel) return null
+
     return props.allChannels.map(c => <Channels channel={c} selectedChannel={props.selectedChannel} />)
 }
 
