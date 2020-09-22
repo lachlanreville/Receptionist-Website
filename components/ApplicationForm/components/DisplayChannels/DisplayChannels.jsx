@@ -6,8 +6,8 @@ export default (props) => {
 
 const Channels = (props) => {
     if(props.channel.id == props.selectedChannel) {
-        return <option value={props.channel.id} selected>{props.channel.name}</options>
+        return <option value={props.channel.id} selected>{props.channel.name}</option>
     } else {
-        return <option value={props.channel.id}>{props.channel.name}</options>
+        return <option value={props.channel.id}>{props.channel.name}</option>
     }
 }
