@@ -100,7 +100,7 @@ export default function Home() {
                     }
                 </Row>
                 <Break height="40" />
-                {specificApplication ? <ApplicationForm application={specificApplication} server={guildInfo} /> : <h1>No application choosen</h1>}
+                {(specificApplication != null && guildInfo != null) ? <ApplicationForm application={specificApplication} server={guildInfo} /> : <h1>No application choosen</h1>}
             </DisplayData>
         </>
     )
