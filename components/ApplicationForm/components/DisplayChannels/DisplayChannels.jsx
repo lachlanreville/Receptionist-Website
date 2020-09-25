@@ -8,7 +8,7 @@ export default (props) => {
 }
 
 const Channels = (props) => {
-    console.log(props.key)
+    console.log(props.position)
     if (props.selectedChannel == null) {
         if (props.position == 1) {
             <option value="" selected>None Selected</option>
