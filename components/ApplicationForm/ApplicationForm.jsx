@@ -17,11 +17,8 @@ export default (props) => {
         serverRoles.push({ value: c.id, label: c.name })
     })
 
-    const [currentAppAcceptRole, setAppAcceptRole] = useState([])
-
     const handleAppRoleChange = (selectedOption) => {
         setValue("applicationAcceptRole", selectedOption)
-        setAppAcceptRole(selectedOption)
     }
 
     let currentAppAcceptRoles = JSON.parse(props.application.applicationAcceptRole)
@@ -33,7 +30,7 @@ export default (props) => {
                 populatedData.push(c)
             }
         })
-        setAppAcceptRole({ selectedOption: populatedData })
+        setValue("applicationAcceptRole", { selectedOption: populatedData })
     }
 
     return (
