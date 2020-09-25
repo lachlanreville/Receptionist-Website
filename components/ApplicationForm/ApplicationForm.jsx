@@ -16,6 +16,7 @@ export default (props) => {
     const onSubmit = data => console.log(data)
 
     useEffect(() => {
+        console.log(enabled)
         setValue('toggled', enabled)
     }, [enabled])
 
