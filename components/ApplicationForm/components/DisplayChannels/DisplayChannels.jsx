@@ -1,7 +1,8 @@
 
 export default (props) => {
     let channelId = (props.selectedChannel == null) ? null : props.selectedChannel;
-
+    console.log(props)
+    console.log(channelId)
     if (!props.allChannels) return null
 
     return props.allChannels.map((channel, position) => <Channels channel={channel} selectedChannel={channelId} position={position} />)
