@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, setValue } = useForm();
     const [enabled, setEnabled] = useState((props.application.enabled == 1) ? true : false);
 
     const onSubmit = data => console.log(data)
@@ -24,7 +24,7 @@ export default (props) => {
                         </select>
                     </div>
                     <div className="formGroup">
-                        <Switch onChange={(checked) => setEnabled(checked)} value={enabled} checked={enabled} ref={register} />
+                        <Switch onChange={(checked) => { setEnabled(checked); setValue('toggled', checked) }} value={enabled} checked={enabled} ref={register} />
                     </div>
                     <div className="formGroup">
 
