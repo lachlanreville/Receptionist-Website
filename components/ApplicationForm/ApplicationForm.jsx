@@ -37,7 +37,9 @@ export default (props) => {
                         </select>
                     </div>
                     <div className="formGroup">
-
+                        <select name="applicationStartChannel" ref={register}>
+                            <DisplayChannels selectedChannel={props.application.applicationStartChannel} allChannels={props.server.channels} />
+                        </select>
                     </div>
                     <div className="formGroup">
 
