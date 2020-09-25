@@ -4,13 +4,13 @@ export default (props) => {
 
     if (!props.allChannels) return null
 
-    return props.allChannels.map((c, position) => <Channels channel={c} selectedChannel={channelId} key={position} />)
+    return props.allChannels.map((channel, position) => <Channels channel={channel} selectedChannel={channelId} position={position} />)
 }
 
 const Channels = (props) => {
     console.log(props.key)
     if (props.selectedChannel == null) {
-        if (props.key == 1) {
+        if (props.position == 1) {
             <option value="" selected>None Selected</option>
         }
         return <option value={props.channel.id}>{props.channel.name}</option>
