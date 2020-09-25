@@ -33,6 +33,10 @@ export default (props) => {
         setValue("applicationAcceptRole", { populatedData })
     }
 
+    useEffect(() => {
+        register({ name: "applicationAcceptRole", required: true })
+    })
+
     return (
         <>
             <h1>Editing {props.application.applicationName}</h1>
