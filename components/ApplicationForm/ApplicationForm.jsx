@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import DisplayChannels from "./components/DisplayChannels"
 import Switch from "react-switch";
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
@@ -14,6 +14,10 @@ export default (props) => {
         }
     });
     const onSubmit = data => console.log(data)
+
+    useEffect(() => {
+        setValue('toggled', enabled)
+    }, [enabled])
 
     return (
         <>
@@ -29,7 +33,7 @@ export default (props) => {
                         </select>
                     </div>
                     <div className="formGroup">
-                        <Switch onChange={(checked) => { setEnabled(checked); setValue('toggled', checked) }} value={enabled} checked={enabled} ref={register} />
+                        <Switch onChange={(checked) => setEnabled(checked)} value={enabled} checked={enabled} ref={register} />
                     </div>
                     <div className="formGroup">
 
