@@ -8,11 +8,7 @@ export default (props) => {
 
     const [enabled, setEnabled] = useState((props.application.enabled == 1) ? true : false);
 
-    const { register, handleSubmit, setValue } = useForm({
-        defaultValues: {
-            toggled: enabled
-        }
-    });
+    const { register, handleSubmit, setValue } = useForm();
     const onSubmit = data => console.log(data)
 
     return (
@@ -31,10 +27,8 @@ export default (props) => {
                     <div className="formGroup">
                         <Switch onChange={(checked) => {
                             setEnabled(checked);
-                            setValue('toggled', checked, {
-                                shouldValidate: true
-                            });
                         }} value={enabled} checked={enabled} ref={register} />
+                        <input type="text" name="toggled" value={enabled} style={{ display: "none" }} />
                     </div>
                     <div className="formGroup">
 
