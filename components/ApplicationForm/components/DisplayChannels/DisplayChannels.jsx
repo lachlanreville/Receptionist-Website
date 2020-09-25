@@ -12,7 +12,12 @@ const Channels = (props) => {
     console.log(props.position)
     if (props.selectedChannel == null) {
         if (props.position == 0) {
-            <option value="" selected>None Selected</option>
+            return (
+                <>
+                    <option value="" selected>None Selected</option>
+                    <option value={props.channel.id}>{props.channel.name}</option>
+                </>
+            )
         }
         return <option value={props.channel.id}>{props.channel.name}</option>
     } else if (props.channel.id == props.selectedChannel) {
