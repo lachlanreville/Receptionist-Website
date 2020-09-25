@@ -32,8 +32,8 @@ export default (props) => {
                     </div>
                     <div className="formGroup">
                         <select ref={register} name="type">
-                            <option value="1">DMs</option>
-                            <option value="2">Channels</option>
+                            {(props.application.type == 1) ? <option value="1" selected>DMs</option> : <option value="1">DMs</option>}
+                            {(props.application.type == 2) ? <option value="2" selected>Channels</option> : <option value="2">Channels</option>}
                         </select>
                     </div>
                     <div className="formGroup">
