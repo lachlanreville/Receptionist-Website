@@ -28,7 +28,7 @@ export default (props) => {
                         <Switch onChange={(checked) => {
                             setEnabled(checked);
                         }} value={enabled} checked={enabled} ref={register} />
-                        <input type="text" name="toggled" value={enabled} style={{ display: "none" }} />
+                        <input type="text" name="toggled" ref={register} value={enabled} style={{ display: "none" }} />
                     </div>
                     <div className="formGroup">
 
