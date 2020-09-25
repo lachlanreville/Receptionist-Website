@@ -31,7 +31,10 @@ export default (props) => {
                         <input type="text" name="toggled" ref={register} value={enabled} style={{ display: "none" }} />
                     </div>
                     <div className="formGroup">
-
+                        <select ref={register} name="type">
+                            <option value="1">DMs</option>
+                            <option value="2">Channels</option>
+                        </select>
                     </div>
                     <div className="formGroup">
 
