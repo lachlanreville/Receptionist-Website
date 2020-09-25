@@ -17,7 +17,9 @@ export default (props) => {
 
     useEffect(() => {
         console.log(enabled)
-        setValue('toggled', enabled)
+        setValue('toggled', enabled, {
+            shouldValidate: true
+        })
     }, [enabled])
 
     return (
