@@ -9,7 +9,7 @@ export default (props) => {
 
     const [enabled, setEnabled] = useState((props.application.enabled == 1) ? true : false);
 
-    const { register, handleSubmit, setValue } = useForm();
+    const { register, handleSubmit, setValue, getValues } = useForm();
     const onSubmit = data => console.log(data)
     let serverRoles = [];
 
@@ -68,7 +68,7 @@ export default (props) => {
                             isMulti
                             name="applicationAcceptRole"
                             placeholder="Application Accept Roles"
-                            value={currentAppAcceptRole.selectedOption}
+                            value={getValues("applicationAcceptRole").selectedOption}
                             options={serverRoles}
                             onChange={handleAppRoleChange}
                         />
