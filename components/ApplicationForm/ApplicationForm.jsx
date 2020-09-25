@@ -16,15 +16,15 @@ export default (props) => {
             <div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="formGroup">
-                        <input type="text" name="applicationName" value={props.application.applicationName} />
+                        <input type="text" name="applicationName" ref={register} value={props.application.applicationName} />
                     </div>
                     <div className="formGroup">
-                        <select name="applicationLogChannel">
+                        <select name="applicationLogChannel" ref={register}>
                             <DisplayChannels selectedChannel={props.application.applicationLogChannel} allChannels={props.server.channels} />
                         </select>
                     </div>
                     <div className="formGroup">
-                        <Switch onChange={(checked) => setEnabled(checked)} checked={enabled} />
+                        <Switch onChange={(checked) => setEnabled(checked)} checked={enabled} ref={register} />
                     </div>
                     <div className="formGroup">
 
