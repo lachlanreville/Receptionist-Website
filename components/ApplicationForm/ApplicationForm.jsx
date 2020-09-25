@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form"
 import DisplayChannels from "./components/DisplayChannels"
 import Switch from "react-switch";
 import { useEffect, useState } from 'react'
+import Select from "react-select"
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
@@ -10,6 +11,30 @@ export default (props) => {
 
     const { register, handleSubmit, setValue } = useForm();
     const onSubmit = data => console.log(data)
+    let serverRoles = [];
+
+    props.server.roles.map(c => {
+        serverRoles.push({ value: c.id, label: c.name })
+    })
+
+    const [currentAppAcceptRole, setAppAcceptRole] = useState([])
+
+    const handleAppRoleChange = (selectedOption) => {
+        setValue("applicationAcceptRole", selectedOption)
+        setAppAcceptRole(selectedOption)
+    }
+
+    let currentAppAcceptRoles = JSON.parse(props.application.applicationAcceptRole)
+
+    if (currentAppAcceptRoles.length > 0) {
+        let populatedData = [];
+        serverRoles.map(c => {
+            if (currentAppAcceptRoles.includes(c.value)) {
+                populatedData.push(c)
+            }
+        })
+        setAppAcceptRole({ selectedOption: populatedData })
+    }
 
     return (
         <>
@@ -42,7 +67,14 @@ export default (props) => {
                         </select>
                     </div>
                     <div className="formGroup">
-
+                        <Select
+                            isMulti
+                            name="applicationAcceptRole"
+                            placeholder="Application Accept Roles"
+                            value={currentAppAcceptRole.selectedOption}
+                            options={serverRoles}
+                            onChange={handleAppRoleChange}
+                        />
                     </div>
                     <div className="formGroup">
 
