@@ -1,6 +1,6 @@
 
 export default (props) => {
-    let channelId = (props.selectedChannel == null) ? "none" : props.selectedChannel;
+    let channelId = (props.selectedChannel == null) ? null : props.selectedChannel;
 
     if (!props.allChannels) return null
 
@@ -10,7 +10,7 @@ export default (props) => {
 const Channels = (props) => {
     console.log(props.position)
     if (props.selectedChannel == null) {
-        if (props.position == 1) {
+        if (props.position == 0) {
             <option value="" selected>None Selected</option>
         }
         return <option value={props.channel.id}>{props.channel.name}</option>
