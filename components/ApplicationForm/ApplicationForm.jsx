@@ -15,13 +15,6 @@ export default (props) => {
     });
     const onSubmit = data => console.log(data)
 
-    useEffect(() => {
-        console.log(enabled)
-        setValue('toggled', enabled, {
-            shouldValidate: true
-        })
-    }, [enabled])
-
     return (
         <>
             <h1>Editing {props.application.applicationName}</h1>
@@ -36,7 +29,12 @@ export default (props) => {
                         </select>
                     </div>
                     <div className="formGroup">
-                        <Switch onChange={(checked) => setEnabled(checked)} value={enabled} checked={enabled} ref={register} />
+                        <Switch onChange={(checked) => {
+                            setEnabled(checked);
+                            setValue('toggled', checked, {
+                                shouldValidate: true
+                            });
+                        }} value={enabled} checked={enabled} ref={register} />
                     </div>
                     <div className="formGroup">
 
