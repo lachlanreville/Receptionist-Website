@@ -25,9 +25,10 @@ export default (props) => {
                         </select>
                     </div>
                     <div className="formGroup">
-                        <Switch name="toggled" onChange={(checked) => {
+                        <Switch onChange={(checked) => {
                             setEnabled(checked);
                         }} value={enabled} checked={enabled} ref={register} />
+                        <input type="text" name="toggled" ref={register} value={enabled} style={{ display: "none" }} />
                     </div>
                     <div className="formGroup">
                         <select ref={register} name="type">
