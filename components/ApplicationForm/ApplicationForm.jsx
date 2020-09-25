@@ -21,7 +21,7 @@ export default (props) => {
                     </div>
                     <div className="formGroup">
                         <select name="applicationLogChannel" ref={register}>
-                            <DisplayChannels selectedChannel={props.application.applicationLogChannel} allChannels={props.server.channels} />
+                            <DisplayChannels selectedChannel={props.application.applicationLogChannel} allChannels={props.server.channels} allowNull="false" />
                         </select>
                     </div>
                     <div className="formGroup">
@@ -38,7 +38,7 @@ export default (props) => {
                     </div>
                     <div className="formGroup">
                         <select name="applicationStartChannel" ref={register}>
-                            <DisplayChannels selectedChannel={props.application.applicationStartChannel} allChannels={props.server.channels} />
+                            <DisplayChannels selectedChannel={props.application.applicationStartChannel} allChannels={props.server.channels} allowNull="true" />
                         </select>
                     </div>
                     <div className="formGroup">
