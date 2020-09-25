@@ -30,7 +30,7 @@ export default (props) => {
                 populatedData.push(c)
             }
         })
-        setValue("applicationAcceptRole", { selectedOption: populatedData })
+        setValue("applicationAcceptRole", { populatedData })
     }
 
     return (
@@ -68,7 +68,7 @@ export default (props) => {
                             isMulti
                             name="applicationAcceptRole"
                             placeholder="Application Accept Roles"
-                            value={getValues("applicationAcceptRole").selectedOption}
+                            value={getValues("applicationAcceptRole")}
                             options={serverRoles}
                             onChange={handleAppRoleChange}
                         />
