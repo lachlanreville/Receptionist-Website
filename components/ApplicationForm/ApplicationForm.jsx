@@ -8,6 +8,7 @@ export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
 
     const [enabled, setEnabled] = useState((props.application.enabled == 1) ? true : false);
+    const [applicationAcceptRole, setApplicationAcceptRole] = useState(null)
 
     const { register, handleSubmit, setValue, getValues } = useForm();
     const onSubmit = data => console.log(data)
@@ -19,6 +20,7 @@ export default (props) => {
 
     const handleAppRoleChange = (selectedOption) => {
         setValue("applicationAcceptRole", selectedOption)
+        setApplicationAcceptRole({ selectedOption })
     }
 
     let currentAppAcceptRoles = JSON.parse(props.application.applicationAcceptRole)
@@ -31,6 +33,7 @@ export default (props) => {
             }
         })
         setValue("applicationAcceptRole", populatedData)
+        setApplicationAcceptRole({ selectedOption: populatedData })
     }
 
     useEffect(() => {
@@ -72,7 +75,7 @@ export default (props) => {
                             isMulti
                             name="applicationAcceptRole"
                             placeholder="Application Accept Roles"
-                            value={getValues("applicationAcceptRole")}
+                            value={applicationAcceptRole}
                             options={serverRoles}
                             onChange={handleAppRoleChange}
                         />
