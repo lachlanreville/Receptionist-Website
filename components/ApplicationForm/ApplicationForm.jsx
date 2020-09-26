@@ -30,7 +30,7 @@ export default (props) => {
                 populatedData.push(c)
             }
         })
-        setValue("applicationAcceptRole", { populatedData })
+        setValue("applicationAcceptRole", populatedData)
     }
 
     useEffect(() => {
