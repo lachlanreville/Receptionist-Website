@@ -8,7 +8,7 @@ export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
 
     const [enabled, setEnabled] = useState((props.application.enabled == 1) ? true : false);
-    const [applicationAcceptRole, setApplicationAcceptRole] = useState(null)
+    const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
 
     const { register, handleSubmit, setValue, getValues } = useForm();
     const onSubmit = data => console.log(data)
@@ -36,7 +36,7 @@ export default (props) => {
     }
 
     useEffect(() => {
-        register({ name: "applicationAcceptRole", required: true })
+        register({ name: "applicationAcceptRole", required: false })
     })
 
     return (
