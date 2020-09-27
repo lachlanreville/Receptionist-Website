@@ -6,9 +6,7 @@ import Select from "react-select"
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
-    const [application, setApplication] = useState(null)
-
-    setApplication(props.application)
+    const [application, setApplication] = useState(props.application)
 
     const [enabled, setEnabled] = useState((application.enabled == 1) ? true : false);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
