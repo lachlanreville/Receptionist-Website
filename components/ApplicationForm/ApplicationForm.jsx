@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form"
 import DisplayChannels from "./components/DisplayChannels"
+import DisplayType from './components/DisplayType'
 import Switch from "react-switch";
 import { useEffect, useState } from 'react'
 import Select from "react-select"
@@ -68,8 +69,7 @@ export default (props) => {
                     </div>
                     <div className="formGroup">
                         <select ref={register} name="type">
-                            {(application.type == 1) ? <option value="1" selected>DMs</option> : <option value="1">DMs</option>}
-                            {(application.type == 2) ? <option value="2" selected>Channels</option> : <option value="2">Channels</option>}
+                            <DisplayType type={application.type} />
                         </select>
                     </div>
                     <div className="formGroup">
