@@ -7,6 +7,7 @@ import Select from "react-select"
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
     const [application, setApplication] = useState(props.application)
+    const [server, setServer] = useState(props.server)
 
     const [enabled, setEnabled] = useState((application.enabled == 1) ? true : false);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
@@ -15,7 +16,7 @@ export default (props) => {
     const onSubmit = data => console.log(data)
     let serverRoles = [];
 
-    props.server.roles.map(c => {
+    server.roles.map(c => {
         serverRoles.push({ value: c.id, label: c.name })
     })
 
@@ -50,7 +51,7 @@ export default (props) => {
                     </div>
                     <div className="formGroup">
                         <select name="applicationLogChannel" ref={register}>
-                            <DisplayChannels selectedChannel={application.applicationLogChannel} allChannels={props.server.channels} logChannel="true" allowNull="false" />
+                            <DisplayChannels selectedChannel={application.applicationLogChannel} allChannels={server.channels} logChannel="true" allowNull="false" />
                         </select>
                     </div>
                     <div className="formGroup">
@@ -67,7 +68,7 @@ export default (props) => {
                     </div>
                     <div className="formGroup">
                         <select name="applicationStartChannel" ref={register}>
-                            <DisplayChannels selectedChannel={application.applicationStartChannel} allChannels={props.server.channels} allowNull="true" />
+                            <DisplayChannels selectedChannel={application.applicationStartChannel} allChannels={server.channels} allowNull="true" />
                         </select>
                     </div>
                     <div className="formGroup">
