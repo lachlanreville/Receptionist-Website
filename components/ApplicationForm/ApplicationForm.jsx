@@ -5,10 +5,10 @@ import { useEffect, useState } from 'react'
 import Select from "react-select"
 
 export default (props) => {
-    if (!application) return (<h1>No Application Data</h1>)
+    if (!props.application) return (<h1>No Application Data</h1>)
     const [application, setApplication] = useState(null)
 
-    setApplication(application)
+    setApplication(props.application)
 
     const [enabled, setEnabled] = useState((application.enabled == 1) ? true : false);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
