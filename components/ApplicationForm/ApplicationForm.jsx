@@ -37,7 +37,7 @@ export default (props) => {
 
     useEffect(() => {
         register({ name: "applicationAcceptRole", required: false })
-    })
+    }, [])
 
     return (
         <>
@@ -49,7 +49,7 @@ export default (props) => {
                     </div>
                     <div className="formGroup">
                         <select name="applicationLogChannel" ref={register}>
-                            <DisplayChannels selectedChannel={props.application.applicationLogChannel} allChannels={props.server.channels} allowNull="false" />
+                            <DisplayChannels selectedChannel={props.application.applicationLogChannel} allChannels={props.server.channels} logChannel="true" allowNull="false" />
                         </select>
                     </div>
                     <div className="formGroup">
