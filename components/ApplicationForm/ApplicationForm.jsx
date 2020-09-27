@@ -9,7 +9,7 @@ export default (props) => {
     const [application, setApplication] = useState(props.application)
     const [server, setServer] = useState(props.server)
 
-    const [enabled, setEnabled] = useState((application.enabled == 1) ? true : false);
+    const [enabled, setEnabled] = useState(true);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
 
     const { register, handleSubmit, setValue, getValues } = useForm();
@@ -19,6 +19,7 @@ export default (props) => {
     useEffect(() => {
         setApplication(props.application)
         setServer(props.server)
+        setEnabled(props.application.enabled)
     }, [props.application])
 
     server.roles.map(c => {

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 export default (props) => {
     const [selectedChannel, updateSelectedChannel] = useState(null)
-    let channelId = (props.selectedChannel == null) ? null : props.selectedChannel;
     useEffect(() => {
         if (props.selectedChannel == null) {
             updateSelectedChannel(null);
