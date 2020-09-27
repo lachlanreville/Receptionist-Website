@@ -1,5 +1,7 @@
+import { forceUpdate } from 'react'
 
 export default (props) => {
+    forceUpdate();
     let channelId = (props.selectedChannel == null) ? null : props.selectedChannel;
     let allowNull = props.allowNull
     let logChannel = props.logChannel
