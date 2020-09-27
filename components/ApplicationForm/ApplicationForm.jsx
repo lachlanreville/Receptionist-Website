@@ -16,6 +16,11 @@ export default (props) => {
     const onSubmit = data => console.log(data)
     let serverRoles = [];
 
+    useEffect(() => {
+        setApplication(props.application)
+        setServer(props.server)
+    }, [props.application])
+
     server.roles.map(c => {
         serverRoles.push({ value: c.id, label: c.name })
     })
