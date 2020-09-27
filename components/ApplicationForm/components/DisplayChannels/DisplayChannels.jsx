@@ -1,14 +1,20 @@
-import { forceUpdate } from 'react'
-
+import { useState, useEffect } from "react"
 export default (props) => {
-    forceUpdate();
+    const [selectedChannel, updateSelectedChannel] = useState(null)
     let channelId = (props.selectedChannel == null) ? null : props.selectedChannel;
+    useEffect(() => {
+        if (props.selectedChannel == null) {
+            updateSelectedChannel(null);
+        } else {
+            updateSelectedChannel(props.selectedChannel)
+        }
+    }, [props.selectedChannel])
     let allowNull = props.allowNull
     let logChannel = props.logChannel
     if (!props.allChannels) return null
     console.log("this is a realod")
 
-    return props.allChannels.map((channel, position) => <Channels channel={channel} selectedChannel={channelId} logChannel={logChannel} position={position} allowNull={allowNull} />)
+    return props.allChannels.map((channel, position) => <Channels channel={channel} selectedChannel={selectedChannel} logChannel={logChannel} position={position} allowNull={allowNull} />)
 }
 
 const Channels = (props) => {
