@@ -1,4 +1,7 @@
 .applicationContainer {
     display: inline-flex;
     flex-wrap: wrap;
+    margin: 20px;
+    border: 1px solid white;
+    border-radius: 15px;
 }
