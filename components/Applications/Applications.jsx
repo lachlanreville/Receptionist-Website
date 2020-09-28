@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
 import styles from "./applications.module.css"
+import DisplayApplications from "./DisplayApplications/"
 
 export default (props) => {
     const [serverData, setServerData] = useState(null)
@@ -16,7 +17,7 @@ export default (props) => {
             <div className={styles.applicationContainer}>
                 <div>
                     <aside>
-                        <h1>Cunt</h1>
+                        <DisplayApplications applications={serverApplications} />
                     </aside>
                 </div>
                 <div>
