@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import { useRouter } from 'next/router'
 import SideNav from '../../../../components/Navigation/SideNav/'
 import { Row, Column, Break } from '../../../../components/Containers/'
 import axios from "axios"
 import * as styles from "./index.module.css"
-import ApplicationForm from "../../../../components/ApplicationForm/"
+import Application from "../../../../components/Applications/"
 
 import React, { useEffect, useState } from 'react';
 
@@ -12,7 +11,6 @@ export default function Home() {
     const [applications, setApplications] = useState(null)
     const [serverData, setServerData] = useState(null)
     const [guildInfo, setGuildInfo] = useState(null)
-    const [specificApplication, setSpecificApplication] = useState(null)
     const router = useRouter();
 
     const { guild } = router.query
@@ -95,12 +93,7 @@ export default function Home() {
         <>
             <DisplayData guildData={serverData}>
                 <Break height="50" />
-                <Row>
-                    {applications ? applications.map((application, position) => <DisplayApplications guild={guild} application={application} position={position} />) : <img src="https://receptioni.st/img/ReceptionistLoadingScreen.gif" alt="Loading Gif" width="256" height="256" style={{ margin: "auto" }} />
-                    }
-                </Row>
-                <Break height="40" />
-                {(specificApplication != null && guildInfo != null) ? <ApplicationForm application={specificApplication} server={guildInfo} /> : <h1>No application choosen</h1>}
+                <Application serverApplications={applications} serverData={guildInfo} />
             </DisplayData>
         </>
     )
