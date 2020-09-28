@@ -4,6 +4,7 @@ import { useRouter } from "next/router"
 export default (props) => {
     const [applications, setApplications] = useState(null)
     const router = useRouter();
+    const { guild } = router.query
 
     useEffect(() => {
         setApplications(props.applications)
