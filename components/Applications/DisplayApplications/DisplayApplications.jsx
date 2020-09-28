@@ -17,7 +17,7 @@ export default (props) => {
 
     return (
         <>
-            { applications ? applications.map((application, position) => <Applications application={c} position={position} />) : "Loading"}
+            { applications ? applications.map((application, position) => <Applications application={application} position={position} />) : "Loading"}
         </>
     )
 }
