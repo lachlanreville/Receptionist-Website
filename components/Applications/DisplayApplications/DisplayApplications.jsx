@@ -1,0 +1,23 @@
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router"
+
+export default (props) => {
+    const [applications, setApplications] = useState(null)
+    const router = useRouter();
+
+    useEffect(() => {
+        setApplications(props.applications)
+    }, [props.applications])
+
+    const Applications = (props) => {
+        return (
+            <a className={styles.applicationName} href="#" onClick={() => router.push(router.pathname + `?application=${props.application.applicationId}`, `/dashboard/${guild}/applications?application=${props.application.applicationId}`, { shallow: true })} > {props.application.applicationName}</a>
+        )
+    }
+
+    return (
+        <>
+            { applications ? applications.map((application, position) => <Applications application={c} position={position} />) : "Loading"}
+        </>
+    )
+}

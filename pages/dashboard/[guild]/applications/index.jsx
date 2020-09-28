@@ -92,7 +92,7 @@ export default function Home() {
     return (
         <>
             <DisplayData guildData={serverData}>
-                <Break height="50" />
+                <Break height="20" />
                 <Application serverApplications={applications} serverData={guildInfo} />
             </DisplayData>
         </>
