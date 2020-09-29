@@ -1,5 +1,5 @@
 .applicationContainer {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
     margin: 20px;
     border: 1px solid white;
@@ -8,4 +8,8 @@
 
 .applicationNav {
     border-right: 1px solid white;
+}
+
+.applicationForm {
+    flex-grow: 1;
 }

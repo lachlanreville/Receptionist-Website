@@ -20,7 +20,7 @@ export default (props) => {
                         <DisplayApplications applications={serverApplications} />
                     </aside>
                 </div>
-                <div>
+                <div className={styles.applicationForm}>
 
                 </div>
             </div>
