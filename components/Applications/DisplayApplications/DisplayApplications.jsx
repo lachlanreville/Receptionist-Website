@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router"
-import styles from "./DisplayApplications"
+import styles from "./DisplayApplications.module.css"
 
 export default (props) => {
     const [applications, setApplications] = useState(null)
