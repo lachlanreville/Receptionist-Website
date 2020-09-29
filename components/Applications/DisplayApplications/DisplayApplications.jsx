@@ -13,8 +13,8 @@ export default (props) => {
 
     const Applications = (props) => {
         return (
-            <li>
-                <a href="#" onClick={() => router.push(router.pathname + `?application=${props.application.applicationId}`, `/dashboard/${guild}/applications?application=${props.application.applicationId}`, { shallow: true })} > {props.application.applicationName}</a>
+            <li className={styles.buttons}>
+                <a className={styles.aCenter} href="#" onClick={() => router.push(router.pathname + `?application=${props.application.applicationId}`, `/dashboard/${guild}/applications?application=${props.application.applicationId}`, { shallow: true })} > {props.application.applicationName}</a>
             </li>
         )
     }
