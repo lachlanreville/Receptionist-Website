@@ -16,7 +16,7 @@ export default (props) => {
         <>
             <div className={styles.applicationContainer}>
                 <div>
-                    <aside>
+                    <aside className={styles.applicationNav}>
                         <DisplayApplications applications={serverApplications} />
                     </aside>
                 </div>
