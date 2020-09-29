@@ -1,0 +1,9 @@
+
+.navDecoration {
+    list-style: none;
+    display: inline-flex;
+    text-align: center;
+    justify-self: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

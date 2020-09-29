@@ -85,7 +85,7 @@ export default function Home() {
 
                 })
         }
-        getSpecificAppliction()
+        //getSpecificAppliction()
 
     }, [router])
 
