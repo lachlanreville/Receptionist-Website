@@ -10,6 +10,8 @@ export default (props) => {
     const [specificApplication, setSpecificApplication] = useState(null)
     const router = useRouter();
 
+    const { guild } = router.query
+
     useEffect(() => {
         setServerData(props.serverData)
         setServerApplications(props.serverApplications)
@@ -42,7 +44,7 @@ export default (props) => {
 
                 })
         }
-        //getSpecificAppliction()
+        getSpecificAppliction()
 
     }, [router])
 

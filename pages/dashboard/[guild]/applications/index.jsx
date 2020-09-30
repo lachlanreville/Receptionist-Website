@@ -49,37 +49,6 @@ export default function Home() {
 
     }, [guild])
 
-    useEffect(() => {
-        if (!router.query.application) return;
-        let access = window.localStorage.getItem("access_token")
-        let refresh = window.localStorage.getItem("refresh_token")
-
-        let applicationId = router.query.application;
-        const getSpecificAppliction = async () => {
-            axios.post(`https://receptioni.st/api/guilds/${guild}/applications/${applicationId}/`,
-                {
-                    access,
-                    refresh
-                }).then(data => {
-                    data = data.data;
-                    setSpecificApplication(data.applicationNames[0])
-                }).catch(function (error) {
-                    if (error.response) {
-                        console.log(error.response)
-                        if (error.response.status == 401) {
-                            window.location.href = "/dashboard/"
-                        }
-                        if (error.response.status == 429) {
-                            setTimeout(getSpecificAppliction, 3000)
-                        }
-                    }
-
-                })
-        }
-        //getSpecificAppliction()
-
-    }, [router])
-
     return (
         <>
             <DisplayData guildData={serverData}>
