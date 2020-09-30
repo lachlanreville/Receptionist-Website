@@ -51,11 +51,12 @@ export default (props) => {
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.applicationRow}>
-                    <fieldset className={styles.applicationFieldSet}>
+                    <fieldset className={styles.applicationNameFieldSet}>
                         <legend>Application Name</legend>
                         <input className={styles.applicationName} type="text" name="applicationName" ref={register} value={application.applicationName} />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className={styles.applicationEnabledFieldSet}>
+                        <legend>Enabled</legend>
                         <Switch onChange={(checked) => {
                             setEnabled(checked);
                         }} value={enabled} checked={enabled} ref={register} className={styles.toggleButton} />

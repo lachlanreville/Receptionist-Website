@@ -13,11 +13,20 @@
     margin: 5px;
 }
 
-.applicationFieldSet {
+.applicationNameFieldSet {
     padding-inline-end: 2em;
     padding-inline-start: 0.55em;
     border: 1px solid white;
-    margin: 10px;
+    margin: 10px 10px 10px 15px;
     width: 85%;
+    border-radius: 10px;
+}
+
+.applicationEnabledFieldSet {
+    padding-inline-end: 0.55em;
+    padding-inline-start: 0.55em;
+    border: 1px solid white;
+    margin: 10px 15px 10px 10px;
+    width: auto;
     border-radius: 10px;
 }
