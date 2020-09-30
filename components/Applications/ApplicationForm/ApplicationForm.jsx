@@ -51,11 +51,16 @@ export default (props) => {
         <>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className={styles.applicationRow}>
-                    <input className={styles.applicationName} type="text" name="applicationName" ref={register} value={application.applicationName} />
-                    <Switch onChange={(checked) => {
-                        setEnabled(checked);
-                    }} value={enabled} checked={enabled} ref={register} className={styles.toggleButton} />
-                    <input type="text" name="toggled" ref={register} value={enabled} style={{ display: "none" }} />
+                    <fieldset className={styles.applicationFieldSet}>
+                        <legend>Application Name</legend>
+                        <input className={styles.applicationName} type="text" name="applicationName" ref={register} value={application.applicationName} />
+                    </fieldset>
+                    <fieldset>
+                        <Switch onChange={(checked) => {
+                            setEnabled(checked);
+                        }} value={enabled} checked={enabled} ref={register} className={styles.toggleButton} />
+                        <input type="text" name="toggled" ref={register} value={enabled} style={{ display: "none" }} />
+                    </fieldset>
                 </div>
                 <div className="formGroup">
                     <select ref={register} name="type">

@@ -11,3 +11,10 @@
 .toggleButton {
     margin: 5px;
 }
+
+.applicationFieldSet {
+    border: 1px solid white;
+    margin: 10px;
+    width: 85%;
+    border-radius: 10px;
+}
