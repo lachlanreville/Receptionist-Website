@@ -13,7 +13,8 @@
 }
 
 .applicationFieldSet {
-    padding-inline-end: 1.25em;
+    padding-inline-end: 1.6em;
+    padding-inline-start: 0.55em;
     border: 1px solid white;
     margin: 10px;
     width: 85%;
