@@ -56,3 +56,11 @@
 .hideElement {
     display: none;
 }
+
+.container {
+    display:flex;
+}
+
+.content {
+    flex-grow: 1;
+}
