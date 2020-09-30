@@ -1,8 +1,6 @@
-import Head from 'next/head'
 import SideNav from '../../../../components/Navigation/SideNav/'
 import { Row, Column, Break } from '../../../../components/Containers/'
 import axios from "axios"
-import * as styles from "./index.module.css"
 import Application from "../../../../components/Applications/"
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react';
