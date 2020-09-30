@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form"
+import { useForm, useFieldArray } from "react-hook-form"
 import Switch from "react-switch";
 import { useEffect, useState } from 'react'
 import Select from "react-select"
@@ -12,7 +12,22 @@ export default (props) => {
     const [enabled, setEnabled] = useState(true);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
 
-    const { register, handleSubmit, setValue } = useForm();
+    const { register, handleSubmit, setValue, control } = useForm();
+
+    const {
+        fields: questions,
+        append: addQuestion,
+        remove: removeQuestion
+    } = useFieldArray({ control, name: "questions" })
+
+    useEffect(() => {
+        if (!application) return;
+        let questions = JSON.parse(application.applicationQuestions)
+        questions.map(c => {
+            addQuestion({ question: c })
+        })
+    }, [application])
+
     const onSubmit = data => console.log(data)
     let serverRoles = [];
 
@@ -72,6 +87,15 @@ export default (props) => {
                         options={serverRoles}
                         onChange={handleAppRoleChange}
                     />
+                </div>
+                <div>
+                    <ul>
+                        {questions.map((question, index) => {
+                            return (
+                                <li key={index}>{question}</li>
+                            )
+                        })}
+                    </ul>
                 </div>
                 <div className="formGroup">
                     <input type="submit" value="Apply Changes!" />
