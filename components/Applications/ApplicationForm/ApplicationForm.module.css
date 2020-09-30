@@ -1,0 +1,13 @@
+.applicationRow {
+    display: flex;
+}
+
+.applicationName {
+    width: 90%;
+    margin: 5px;
+    height: 20px;
+}
+
+.toggleButton {
+    margin: 5px;
+}

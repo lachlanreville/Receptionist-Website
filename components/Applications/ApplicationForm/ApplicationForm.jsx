@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form"
 import Switch from "react-switch";
 import { useEffect, useState } from 'react'
 import Select from "react-select"
+import styles from "./ApplicationForm.module.css"
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
@@ -11,7 +12,7 @@ export default (props) => {
     const [enabled, setEnabled] = useState(true);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
 
-    const { register, handleSubmit, setValue, getValues } = useForm();
+    const { register, handleSubmit, setValue } = useForm();
     const onSubmit = data => console.log(data)
     let serverRoles = [];
 
@@ -48,69 +49,60 @@ export default (props) => {
 
     return (
         <>
-            <h1>Editing {application.applicationName}</h1>
-            <div>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="formGroup">
-                        <input type="text" name="applicationName" ref={register} value={application.applicationName} />
-                    </div>
-                    <div className="formGroup">
-                        <select name="applicationLogChannel" ref={register}>
-                        </select>
-                    </div>
-                    <div className="formGroup">
-                        <Switch onChange={(checked) => {
-                            setEnabled(checked);
-                        }} value={enabled} checked={enabled} ref={register} />
-                        <input type="text" name="toggled" ref={register} value={enabled} style={{ display: "none" }} />
-                    </div>
-                    <div className="formGroup">
-                        <select ref={register} name="type">
-                        </select>
-                    </div>
-                    <div className="formGroup">
-                        <select name="applicationStartChannel" ref={register}>
-                        </select>
-                    </div>
-                    <div className="formGroup">
-                        <Select
-                            isMulti
-                            name="applicationAcceptRole"
-                            placeholder="Application Accept Roles"
-                            value={applicationAcceptRole.selectedOption}
-                            options={serverRoles}
-                            onChange={handleAppRoleChange}
-                        />
-                    </div>
-                    <div className="formGroup">
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <div className={styles.applicationRow}>
+                    <input className={styles.applicationName} type="text" name="applicationName" ref={register} value={application.applicationName} />
+                    <Switch onChange={(checked) => {
+                        setEnabled(checked);
+                    }} value={enabled} checked={enabled} ref={register} className={styles.toggleButton} />
+                    <input type="text" name="toggled" ref={register} value={enabled} style={{ display: "none" }} />
+                </div>
+                <div className="formGroup">
+                    <select ref={register} name="type">
+                    </select>
+                </div>
+                <div className="formGroup">
+                    <select name="applicationStartChannel" ref={register}>
+                    </select>
+                </div>
+                <div className="formGroup">
+                    <Select
+                        isMulti
+                        name="applicationAcceptRole"
+                        placeholder="Application Accept Roles"
+                        value={applicationAcceptRole.selectedOption}
+                        options={serverRoles}
+                        onChange={handleAppRoleChange}
+                    />
+                </div>
+                <div className="formGroup">
 
-                    </div>
-                    <div className="formGroup">
+                </div>
+                <div className="formGroup">
 
-                    </div>
-                    <div className="formGroup">
+                </div>
+                <div className="formGroup">
 
-                    </div>
-                    <div className="formGroup">
+                </div>
+                <div className="formGroup">
 
-                    </div>
-                    <div className="formGroup">
+                </div>
+                <div className="formGroup">
 
-                    </div>
-                    <div className="formGroup">
+                </div>
+                <div className="formGroup">
 
-                    </div>
-                    <div className="formGroup">
+                </div>
+                <div className="formGroup">
 
-                    </div>
-                    <div className="formGroup">
+                </div>
+                <div className="formGroup">
 
-                    </div>
-                    <div className="formGroup">
-                        <input type="submit" value="Apply Changes!" />
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div className="formGroup">
+                    <input type="submit" value="Apply Changes!" />
+                </div>
+            </form>
         </>
     )
 }
