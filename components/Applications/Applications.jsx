@@ -2,10 +2,12 @@ import { useRouter } from 'next/router'
 import { useState, useEffect } from "react"
 import styles from "./applications.module.css"
 import DisplayApplications from "./DisplayApplications/"
+import ApplicationForm from "./ApplicationForm/"
 
 export default (props) => {
     const [serverData, setServerData] = useState(null)
     const [serverApplications, setServerApplications] = useState(null)
+    const [specificApplication, setSpecificApplication] = useState(null)
 
     useEffect(() => {
         setServerData(props.serverData)
@@ -21,7 +23,7 @@ export default (props) => {
                     </aside>
                 </div>
                 <div className={styles.applicationForm}>
-
+                    <ApplicationForm application={specificApplication} />
                 </div>
             </div>
         </>
