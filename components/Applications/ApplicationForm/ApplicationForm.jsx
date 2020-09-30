@@ -63,14 +63,6 @@ export default (props) => {
                     </fieldset>
                 </div>
                 <div className="formGroup">
-                    <select ref={register} name="type">
-                    </select>
-                </div>
-                <div className="formGroup">
-                    <select name="applicationStartChannel" ref={register}>
-                    </select>
-                </div>
-                <div className="formGroup">
                     <Select
                         isMulti
                         name="applicationAcceptRole"
@@ -79,30 +71,6 @@ export default (props) => {
                         options={serverRoles}
                         onChange={handleAppRoleChange}
                     />
-                </div>
-                <div className="formGroup">
-
-                </div>
-                <div className="formGroup">
-
-                </div>
-                <div className="formGroup">
-
-                </div>
-                <div className="formGroup">
-
-                </div>
-                <div className="formGroup">
-
-                </div>
-                <div className="formGroup">
-
-                </div>
-                <div className="formGroup">
-
-                </div>
-                <div className="formGroup">
-
                 </div>
                 <div className="formGroup">
                     <input type="submit" value="Apply Changes!" />

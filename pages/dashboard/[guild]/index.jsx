@@ -49,9 +49,9 @@ export default function Home() {
   useEffect(() => {
     if (!guildData) return;
 
-    if (!guildDatabase) {
-      window.location.href = "https://discord.com/oauth2/authorize?client_id=697932571601797130&scope=bot&guild_id=" + guild + "&permissions=2134207679"
-    }
+    // if (!guildDatabase) {
+    // window.location.href = "https://discord.com/oauth2/authorize?client_id=697932571601797130&scope=bot&guild_id=" + guild + "&permissions=2134207679"
+    //}
   }, [guildData])
 
   console.log(guildData)
