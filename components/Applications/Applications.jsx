@@ -58,7 +58,7 @@ export default (props) => {
                     </aside>
                 </div>
                 <div className={styles.applicationForm}>
-                    <ApplicationForm application={specificApplication} />
+                    <ApplicationForm application={specificApplication} serverData={serverData} />
                 </div>
             </div>
         </>

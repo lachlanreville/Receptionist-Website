@@ -6,7 +6,7 @@ import Select from "react-select"
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
     const [application, setApplication] = useState(props.application)
-    const [server, setServer] = useState(props.server)
+    const [server, setServer] = useState(props.serverData)
 
     const [enabled, setEnabled] = useState(true);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
@@ -17,7 +17,7 @@ export default (props) => {
 
     useEffect(() => {
         setApplication(props.application)
-        setServer(props.server)
+        setServer(props.serverData)
         setEnabled(props.application.enabled)
     }, [props.application])
 
