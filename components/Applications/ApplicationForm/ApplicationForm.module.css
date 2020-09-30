@@ -6,6 +6,7 @@
     width: 100%;
     margin: 5px;
     height: 20px;
+    padding: 5px;
 }
 
 .toggleButton {
@@ -13,7 +14,7 @@
 }
 
 .applicationFieldSet {
-    padding-inline-end: 1.6em;
+    padding-inline-end: 2em;
     padding-inline-start: 0.55em;
     border: 1px solid white;
     margin: 10px;
