@@ -23,10 +23,11 @@ export default (props) => {
     useEffect(() => {
         if (!application) return;
         let question = JSON.parse(application.applicationQuestions)
+        let newQuestion = [];
         question.map(c => {
-            addQuestion({ question: c })
+            newQuestion.push({ question: c })
         })
-        console.log(questions)
+        addQuestion(newQuestion)
     }, [application])
 
     const onSubmit = data => console.log(data)
