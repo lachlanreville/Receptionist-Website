@@ -92,7 +92,7 @@ export default (props) => {
                     <ul>
                         {questions.map((question, index) => {
                             return (
-                                <li key={index}>{question}</li>
+                                <li key={index}>{question.question}</li>
                             )
                         })}
                     </ul>
