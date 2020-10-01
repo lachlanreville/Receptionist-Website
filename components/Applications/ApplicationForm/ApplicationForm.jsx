@@ -94,7 +94,7 @@ export default (props) => {
                 </div>
                 <div>
                     <fieldset className={styles.applicationQuestionFieldSet}>
-                        <legend>Questions</legend>
+                        {server.premium ? <legend>Questions {questions.length}/15</legend> : <legend>Questions {questions.length}/Unlimited</legend>}
                         <div>
                             <ul className={styles.applicationQuestionUL}>
                                 {questions.map((question, index) => {
