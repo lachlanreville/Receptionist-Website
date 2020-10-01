@@ -119,7 +119,14 @@ export default (props) => {
                         </div>
                         <div>
                             <button type="button" onClick={() => {
-                                addQuestion({ question: "" })
+                                if (server.premium) {
+                                    addQuestion({ question: "" })
+                                } else {
+                                    if (questions.length >= 15) {
+                                        print("Exceeded the 15 Question limit for non-premium Servers")
+                                    }
+                                }
+
                             }}>New Question</button>
                         </div>
                     </fieldset>
