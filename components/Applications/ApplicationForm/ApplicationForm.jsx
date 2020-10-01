@@ -86,6 +86,7 @@ export default (props) => {
                     <fieldset className={styles.applicationQuestionFieldSet}>
                         <legend>Roles Given on Application Accept</legend>
                         <Select
+                            style={{ color: "black" }}
                             isMulti
                             name="applicationAcceptRole"
                             placeholder="Application Accept Roles"
