@@ -102,11 +102,6 @@ export default (props) => {
                                     return (
                                         <li key={index}>
                                             <input type="text"
-                                                control={control}
-                                                onChange={(value) => {
-                                                    console.log(value)
-                                                    return { question: value };
-                                                }}
                                                 name={`questions[${index}].question`}
                                                 value={question.question}
                                                 ref={register}
