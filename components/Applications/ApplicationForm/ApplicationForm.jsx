@@ -22,6 +22,7 @@ export default (props) => {
 
     useEffect(() => {
         if (!application) return;
+        remove()
         let question = JSON.parse(application.applicationQuestions)
         let newQuestion = [];
         question.map(c => {
