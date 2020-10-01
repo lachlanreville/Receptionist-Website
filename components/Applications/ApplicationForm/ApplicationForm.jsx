@@ -3,6 +3,7 @@ import Switch from "react-switch";
 import { useEffect, useState } from 'react'
 import Select from "react-select"
 import styles from "./ApplicationForm.module.css"
+import Applications from "../Applications";
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
@@ -23,7 +24,9 @@ export default (props) => {
     useEffect(() => {
         if (!application) return;
         console.log("got here")
-        removeQuestion()
+        for (let i = 0; i < questions.length; i++) {
+            removeQuestion(0)
+        }
         console.log(questions)
         let question = JSON.parse(application.applicationQuestions)
         let newQuestion = [];
