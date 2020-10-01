@@ -103,6 +103,8 @@ export default (props) => {
                                         name={`question[${index}].question`}
                                         value={question.question}
                                     />
+
+                                    <button type="button" onclick={() => removeQuestion(index)}>Delete</button>
                                 </li>
                             )
                         })}
