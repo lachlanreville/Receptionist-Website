@@ -24,11 +24,14 @@ export default (props) => {
     useEffect(() => {
         if (!application) return;
         console.log("got here")
-        removeArr = []
+        let removeArr = []
         for (let i = 0; i < questions.length; i++) {
             removeArr.push(i)
         }
-        removeQuestion(removeArr)
+        if (removeArr.length > 0) {
+            removeQuestion(removeArr)
+        }
+
         console.log(questions)
         let question = JSON.parse(application.applicationQuestions)
         let newQuestion = [];
