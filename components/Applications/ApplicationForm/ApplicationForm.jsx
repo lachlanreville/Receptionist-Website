@@ -62,6 +62,8 @@ export default (props) => {
 
     useEffect(() => {
         register({ name: "applicationAcceptRole", required: false })
+        register({ name: "questions", required: true })
+
     }, [])
 
     return (
@@ -100,7 +102,7 @@ export default (props) => {
                                         onChange={([value]) => {
                                             return { question: value };
                                         }}
-                                        name={`question[${index}].question`}
+                                        name={`questions[${index}].question`}
                                         value={question.question}
                                     />
 
