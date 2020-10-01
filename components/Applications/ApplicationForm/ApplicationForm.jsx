@@ -124,6 +124,8 @@ export default (props) => {
                                 } else {
                                     if (questions.length >= 15) {
                                         print("Exceeded the 15 Question limit for non-premium Servers")
+                                    } else {
+                                        addQuestion({ question: "" })
                                     }
                                 }
 
