@@ -52,8 +52,8 @@ export default (props) => {
     return (
         <>
             <div className={styles.applicationContainer}>
-                <div>
-                    <aside className={styles.applicationNav}>
+                <div className={styles.applicationNav}>
+                    <aside>
                         <DisplayApplications applications={serverApplications} />
                     </aside>
                 </div>
