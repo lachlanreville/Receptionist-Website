@@ -83,14 +83,17 @@ export default (props) => {
                     </fieldset>
                 </div>
                 <div className="formGroup">
-                    <Select
-                        isMulti
-                        name="applicationAcceptRole"
-                        placeholder="Application Accept Roles"
-                        value={applicationAcceptRole.selectedOption}
-                        options={serverRoles}
-                        onChange={handleAppRoleChange}
-                    />
+                    <fieldset className={styles.applicationQuestionFieldSet}>
+                        <legend>Roles Given on Application Accept</legend>
+                        <Select
+                            isMulti
+                            name="applicationAcceptRole"
+                            placeholder="Application Accept Roles"
+                            value={applicationAcceptRole.selectedOption}
+                            options={serverRoles}
+                            onChange={handleAppRoleChange}
+                        />
+                    </fieldset>
                 </div>
                 <div>
                     <fieldset className={styles.applicationQuestionFieldSet}>
