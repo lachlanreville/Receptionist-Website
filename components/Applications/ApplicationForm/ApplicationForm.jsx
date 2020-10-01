@@ -106,7 +106,7 @@ export default (props) => {
                                         value={question.question}
                                     />
 
-                                    <button type="button" onclick={() => removeQuestion(index)}>Delete</button>
+                                    <button type="button" onClick={() => removeQuestion(index)}>Delete</button>
                                 </li>
                             )
                         })}
