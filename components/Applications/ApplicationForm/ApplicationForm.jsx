@@ -104,6 +104,7 @@ export default (props) => {
                                         }}
                                         name={`questions[${index}].question`}
                                         value={question.question}
+                                        ref={register}
                                     />
 
                                     <button type="button" onClick={() => removeQuestion(index)}>Delete</button>
