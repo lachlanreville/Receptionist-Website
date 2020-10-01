@@ -13,7 +13,7 @@ export default (props) => {
     const [enabled, setEnabled] = useState(true);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
 
-    const { register, handleSubmit, setValue, control } = useForm();
+    const { register, handleSubmit, setValue, control, reset } = useForm();
 
     const {
         fields: questions,
@@ -24,14 +24,7 @@ export default (props) => {
     useEffect(() => {
         if (!application) return;
         console.log("got here")
-        let removeArr = []
-        for (let i = 0; i < questions.length; i++) {
-            removeArr.push(i)
-        }
-        if (removeArr.length > 0) {
-            removeQuestion(removeArr)
-        }
-
+        reset()
         console.log(questions)
         let question = JSON.parse(application.applicationQuestions)
         let newQuestion = [];
