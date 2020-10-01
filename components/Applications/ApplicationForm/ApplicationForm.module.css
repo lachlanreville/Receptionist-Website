@@ -44,8 +44,10 @@
 .applicationQuestionInput {
     font-size: 18px;
     width: 90%;
+    margin-bottom: 5px; 
 }
 .applicationQuestionButton {
     margin-left: 15px;
-    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 5px; 
 }
