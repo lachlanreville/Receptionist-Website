@@ -3,6 +3,7 @@ import Switch from "react-switch";
 import { useEffect, useState } from 'react'
 import Select from "react-select"
 import styles from "./ApplicationForm.module.css"
+import Control from "react-select/src/components/Control";
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
@@ -94,7 +95,17 @@ export default (props) => {
                     <ul>
                         {questions.map((question, index) => {
                             return (
-                                <li key={index}>{question.question}</li>
+                                <li key={index}>
+                                    <Controller
+                                        as={<input type="text" />}
+                                        control={control}
+                                        onChange={(c) => {
+                                            return { question: c };
+                                        }}
+                                        name={`question[${index}].question`}
+                                        value={question}
+                                    />
+                                </li>
                             )
                         })}
                     </ul>
