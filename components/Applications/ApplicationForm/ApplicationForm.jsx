@@ -38,10 +38,11 @@ export default (props) => {
     let serverRoles = [];
 
     useEffect(() => {
+        reset()
         setApplication(props.application)
         setServer(props.serverData)
         setEnabled(props.application.enabled)
-        reset()
+
     }, [props.application])
 
     server.roles.map(c => {
