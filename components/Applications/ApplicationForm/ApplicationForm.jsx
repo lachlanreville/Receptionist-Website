@@ -94,7 +94,7 @@ export default (props) => {
                 </div>
                 <div>
                     <fieldset className={styles.applicationQuestionFieldSet}>
-                        {server.premium ? <legend>Questions {questions.length}/15</legend> : <legend>Questions</legend>}
+                        {(server.premium == 1) ? <legend>Questions</legend> : <legend>Questions {questions.length}/15</legend>}
                         <div>
                             <ul className={styles.applicationQuestionUL}>
                                 {questions.map((question, index) => {
@@ -119,7 +119,7 @@ export default (props) => {
                         </div>
                         <div>
                             <button type="button" onClick={() => {
-                                if (server.premium) {
+                                if (server.premium == 1) {
                                     addQuestion({ question: "" })
                                 } else {
                                     if (questions.length >= 15) {
