@@ -1,4 +1,4 @@
-import { useForm, useFieldArray } from "react-hook-form"
+import { useForm, useFieldArray, Controller } from "react-hook-form"
 import Switch from "react-switch";
 import { useEffect, useState } from 'react'
 import Select from "react-select"
@@ -101,10 +101,12 @@ export default (props) => {
                                     console.log(index)
                                     return (
                                         <li key={index}>
-                                            <input type="text"
+                                            <Controller
+                                                as={<input />}
+                                                type="text"
                                                 name={`questions[${index}].question`}
                                                 value={question.question}
-                                                ref={register}
+                                                control={control}
                                                 className={styles.applicationQuestionInput}
                                             />
 
