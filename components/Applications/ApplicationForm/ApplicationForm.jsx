@@ -14,7 +14,7 @@ export default (props) => {
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
 
     const { register, handleSubmit, setValue, control, reset } = useForm();
-    reset()
+
     const {
         fields: questions,
         append: addQuestion,
@@ -38,7 +38,7 @@ export default (props) => {
     let serverRoles = [];
 
     useEffect(() => {
-
+        reset()
         setApplication(props.application)
         setServer(props.serverData)
         setEnabled(props.application.enabled)
