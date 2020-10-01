@@ -3,7 +3,6 @@ import Switch from "react-switch";
 import { useEffect, useState } from 'react'
 import Select from "react-select"
 import styles from "./ApplicationForm.module.css"
-import Control from "react-select/src/components/Control";
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
