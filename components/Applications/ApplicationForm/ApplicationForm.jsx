@@ -101,7 +101,7 @@ export default (props) => {
                                             return { question: value };
                                         }}
                                         name={`question[${index}].question`}
-                                        value={question}
+                                        value={question.question}
                                     />
                                 </li>
                             )
