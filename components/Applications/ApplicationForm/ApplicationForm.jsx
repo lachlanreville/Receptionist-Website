@@ -98,6 +98,7 @@ export default (props) => {
                         <div>
                             <ul className={styles.applicationQuestionUL}>
                                 {questions.map((question, index) => {
+                                    console.log(index)
                                     return (
                                         <li key={index}>
                                             <input type="text"
