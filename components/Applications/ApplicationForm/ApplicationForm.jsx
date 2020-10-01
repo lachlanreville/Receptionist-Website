@@ -111,7 +111,10 @@ export default (props) => {
                                                 defaultValue={question.question}
                                             />
 
-                                            <button type="button" className={styles.applicationQuestionButton} onClick={() => removeQuestion(index)}>Delete</button>
+                                            <button type="button" className={styles.applicationQuestionButton} onClick={() => {
+                                                console.log(index)
+                                                removeQuestion(index)
+                                            }}>Delete</button>
                                         </li>
                                     )
                                 })}
