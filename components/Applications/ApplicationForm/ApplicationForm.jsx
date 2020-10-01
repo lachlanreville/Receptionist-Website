@@ -93,25 +93,36 @@ export default (props) => {
                     />
                 </div>
                 <div>
-                    <ul>
-                        {questions.map((question, index) => {
-                            return (
-                                <li key={index}>
-                                    <input type="text"
-                                        control={control}
-                                        onChange={([value]) => {
-                                            return { question: value };
-                                        }}
-                                        name={`questions[${index}].question`}
-                                        value={question.question}
-                                        ref={register}
-                                    />
+                    <fieldset className={styles.applicationQuestionFieldSet}>
+                        <legend>Questions</legend>
+                        <div>
+                            <ul className={styles.applicationQuestionUL}>
+                                {questions.map((question, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <input type="text"
+                                                control={control}
+                                                onChange={([value]) => {
+                                                    return { question: value };
+                                                }}
+                                                name={`questions[${index}].question`}
+                                                value={question.question}
+                                                ref={register}
+                                                className={styles.applicationQuestionInput}
+                                            />
 
-                                    <button type="button" onClick={() => removeQuestion(index)}>Delete</button>
-                                </li>
-                            )
-                        })}
-                    </ul>
+                                            <button type="button" className={styles.applicationQuestionButton} onClick={() => removeQuestion(index)}>Delete</button>
+                                        </li>
+                                    )
+                                })}
+                            </ul>
+                        </div>
+                        <div>
+                            <button type="button" onClick={() => {
+                                addQuestion({ question: "" })
+                            }}>New Question</button>
+                        </div>
+                    </fieldset>
                 </div>
                 <div className="formGroup">
                     <input type="submit" value="Apply Changes!" />

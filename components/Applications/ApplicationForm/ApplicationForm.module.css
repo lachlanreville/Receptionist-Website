@@ -30,3 +30,22 @@
     width: auto;
     border-radius: 10px;
 }
+
+.applicationQuestionFieldSet {
+    margin: 15px;
+    border: 1px solid white;
+    border-radius: 15px;
+}
+
+.applicationQuestionUL {
+    list-style: none;
+}
+
+.applicationQuestionInput {
+    font-size: 18px;
+    width: 90%;
+}
+.applicationQuestionButton {
+    margin-left: 15px;
+    padding: 5px;
+}
