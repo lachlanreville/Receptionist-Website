@@ -99,11 +99,11 @@ export default (props) => {
                                     <Controller
                                         as={<input type="text" />}
                                         control={control}
-                                        onChange={(c) => {
-                                            return { question: c };
+                                        onChange={([value]) => {
+                                            return { question: value };
                                         }}
                                         name={`question[${index}].question`}
-                                        value={question}
+                                        defaultValue={question}
                                     />
                                 </li>
                             )
