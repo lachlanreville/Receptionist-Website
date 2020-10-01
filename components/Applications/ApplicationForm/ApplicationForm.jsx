@@ -96,14 +96,13 @@ export default (props) => {
                         {questions.map((question, index) => {
                             return (
                                 <li key={index}>
-                                    <Controller
-                                        as={<input type="text" />}
+                                    <input type="text"
                                         control={control}
                                         onChange={([value]) => {
                                             return { question: value };
                                         }}
                                         name={`question[${index}].question`}
-                                        defaultValue={question}
+                                        value={question}
                                     />
                                 </li>
                             )
