@@ -99,10 +99,9 @@ export default (props) => {
                             <ul className={styles.applicationQuestionUL}>
                                 {questions.map((question, index) => {
                                     return (
-                                        <li key={index}>
+                                        <li key={question.id}>
                                             <Controller
                                                 as={<input />}
-                                                type="text"
                                                 name={`questions[${index}].question`}
                                                 control={control}
                                                 className={styles.applicationQuestionInput}
