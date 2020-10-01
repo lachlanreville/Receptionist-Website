@@ -24,7 +24,7 @@ export default (props) => {
     useEffect(() => {
         if (!application) return;
         console.log("got here")
-        reset()
+
         console.log(questions)
         let question = JSON.parse(application.applicationQuestions)
         let newQuestion = [];
@@ -41,6 +41,7 @@ export default (props) => {
         setApplication(props.application)
         setServer(props.serverData)
         setEnabled(props.application.enabled)
+        reset()
     }, [props.application])
 
     server.roles.map(c => {
