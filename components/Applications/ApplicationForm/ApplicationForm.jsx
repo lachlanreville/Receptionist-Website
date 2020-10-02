@@ -163,7 +163,7 @@ export default (props) => {
                         <fieldset>
                             <legend>Log Channel Type</legend>
                             {applicationLogChannel => {
-                                if (applicationLogChannel.logChannelType == "specific") {
+                                if (applicationLogChannel.logChannelType == "logChannel") {
                                     return (
                                         <>
                                             <label forHTML="logChannel">Specific Channel</label>
