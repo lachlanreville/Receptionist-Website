@@ -162,7 +162,7 @@ export default (props) => {
                     <div>
                         <fieldset>
                             <legend>Log Channel Type</legend>
-                            {applicationLogChannel => {
+                            {applicationLogChannel ? applicationLogChannel => {
                                 if (applicationLogChannel.logChannelType == "logChannel") {
                                     return (
                                         <>
@@ -182,7 +182,7 @@ export default (props) => {
                                         </>
                                     )
                                 }
-                            }}
+                            } : <h1>Loading</h1>}
 
 
                         </fieldset>
