@@ -152,9 +152,10 @@ export default (props) => {
                     <div>
                         <fieldset>
                             <legend>Log Channel Type</legend>
-
-                            <input type="radio" name="logChannelType" value="logChannel" ref={register} />
-                            <input type="radio" name="logChannelType" value="multiple" ref={register} />
+                            <label forHTML="logChannel">Specific Channel</label>
+                            <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} />
+                            <label forHTML="multiple">Multiple Channels</label>
+                            <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} />
                         </fieldset>
 
                     </div>
