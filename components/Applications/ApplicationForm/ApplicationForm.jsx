@@ -3,7 +3,6 @@ import Switch from "react-switch";
 import { useEffect, useState } from 'react'
 import Select from "react-select"
 import styles from "./ApplicationForm.module.css"
-import Applications from "../Applications";
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
@@ -148,6 +147,20 @@ export default (props) => {
                             }}>New Question</button>
                         </div>
                     </fieldset>
+                </div>
+                <div>
+                    <div>
+                        <fieldset>
+                            <legend>Log Channel Type</legend>
+
+                            <input type="radio" name="logChannelType" value="logChannel" ref={register} />
+                            <input type="radio" name="logChannelType" value="multiple" ref={register} />
+                        </fieldset>
+
+                    </div>
+                    <div>
+
+                    </div>
                 </div>
                 <div className="formGroup">
                     <input type="submit" value="Apply Changes!" />
