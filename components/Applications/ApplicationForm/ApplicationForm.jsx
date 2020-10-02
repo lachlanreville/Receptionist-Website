@@ -162,29 +162,21 @@ export default (props) => {
                     <div>
                         <fieldset>
                             <legend>Log Channel Type</legend>
-                            {applicationLogChannel ? applicationLogChannel => {
-                                if (applicationLogChannel.logChannelType == "logChannel") {
-                                    return (
-                                        <>
-                                            <label forHTML="logChannel">Specific Channel</label>
-                                            <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} selected />
-                                            <label forHTML="multiple">Multiple Channels</label>
-                                            <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} />
-                                        </>
-                                    )
-                                } else {
-                                    return (
-                                        <>
-                                            <label forHTML="logChannel">Specific Channel</label>
-                                            <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} />
-                                            <label forHTML="multiple">Multiple Channels</label>
-                                            <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} selected />
-                                        </>
-                                    )
-                                }
-                            } : <h1>Loading</h1>}
-
-
+                            {applicationLogChannel ? (applicationLogChannel.logChannelType == "logChannel") ?
+                                <>
+                                    <label forHTML="logChannel">Specific Channel</label>
+                                    <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} selected />
+                                    <label forHTML="multiple">Multiple Channels</label>
+                                    <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} />
+                                </>
+                                :
+                                <>
+                                    <label forHTML="logChannel">Specific Channel</label>
+                                    <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} />
+                                    <label forHTML="multiple">Multiple Channels</label>
+                                    <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} selected />
+                                </>
+                                : <h1>Loading</h1>}
                         </fieldset>
                         <div>
                             <Select
