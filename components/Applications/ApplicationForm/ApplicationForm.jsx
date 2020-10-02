@@ -11,6 +11,7 @@ export default (props) => {
 
     const [enabled, setEnabled] = useState(true);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
+    const [applicationLogChannel, setApplicationLogChannel] = useState({ logChannelType: "", value: "" })
 
     const { register, handleSubmit, setValue, control, reset } = useForm();
 
@@ -43,6 +44,15 @@ export default (props) => {
         setEnabled(props.application.enabled)
         setApplication(props.application)
     }, [props.application])
+
+    useEffect(() => {
+        let appChannel = server.applicationLogChannel;
+        if (appChannel == "multiple") {
+            setApplicationLogChannel({ logChannelType: "multiple", value: server.applicationCategoryId })
+        } else {
+            setApplicationLogChannel({ logChannelType: "logChannel", value: appChannel })
+        }
+    }, [application])
 
     server.roles.map(c => {
         serverRoles.push({ value: c.id, label: c.name })
@@ -152,16 +162,37 @@ export default (props) => {
                     <div>
                         <fieldset>
                             <legend>Log Channel Type</legend>
-                            <label forHTML="logChannel">Specific Channel</label>
-                            <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} />
-                            <label forHTML="multiple">Multiple Channels</label>
-                            <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} />
+                            {applicationLogChannel => {
+                                if (applicationLogChannel.logChannelType == "specific") {
+                                    return (
+                                        <>
+                                            <label forHTML="logChannel">Specific Channel</label>
+                                            <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} selected />
+                                            <label forHTML="multiple">Multiple Channels</label>
+                                            <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} />
+                                        </>
+                                    )
+                                } else {
+                                    return (
+                                        <>
+                                            <label forHTML="logChannel">Specific Channel</label>
+                                            <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} />
+                                            <label forHTML="multiple">Multiple Channels</label>
+                                            <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} selected />
+                                        </>
+                                    )
+                                }
+                            }}
+
+
                         </fieldset>
+                        <div>
+                            <Select
 
+                            />
+                        </div>
                     </div>
-                    <div>
 
-                    </div>
                 </div>
                 <div className="formGroup">
                     <input type="submit" value="Apply Changes!" />
