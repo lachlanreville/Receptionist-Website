@@ -165,7 +165,7 @@ export default (props) => {
                             {applicationLogChannel ? (applicationLogChannel.logChannelType == "logChannel") ?
                                 <>
                                     <label forHTML="logChannel">Specific Channel</label>
-                                    <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} selected />
+                                    <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} defaultChecked />
                                     <label forHTML="multiple">Multiple Channels</label>
                                     <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} />
                                 </>
@@ -174,7 +174,7 @@ export default (props) => {
                                     <label forHTML="logChannel">Specific Channel</label>
                                     <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} />
                                     <label forHTML="multiple">Multiple Channels</label>
-                                    <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} selected />
+                                    <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} defaultChecked />
                                 </>
                                 : <h1>Loading</h1>}
                         </fieldset>
