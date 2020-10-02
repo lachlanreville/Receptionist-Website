@@ -23,15 +23,15 @@ export default (props) => {
 
     useEffect(() => {
         if (!application) return;
-        console.log("got here")
+        setTimeout(() => {
+            let question = JSON.parse(application.applicationQuestions)
+            let newQuestion = [];
+            question.map(c => {
+                newQuestion.push({ question: c })
+            })
+            addQuestion(newQuestion)
+        }, 500)
 
-        console.log(questions)
-        let question = JSON.parse(application.applicationQuestions)
-        let newQuestion = [];
-        question.map(c => {
-            newQuestion.push({ question: c })
-        })
-        addQuestion(newQuestion)
     }, [application])
 
     const onSubmit = data => console.log(data)
