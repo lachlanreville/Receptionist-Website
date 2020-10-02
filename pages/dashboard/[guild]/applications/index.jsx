@@ -27,7 +27,7 @@ export default function Home() {
                 }).then(data => {
                     data = data.data;
                     setApplications(data.applicationNames)
-                    data.guildInfo.premium = (data.guildInfo.premium == 1) ? 1 : 0;
+                    data.guildInfo.premium = (data.serverData.premium == 1) ? 1 : 0;
                     setServerData(data.serverData)
                     setGuildInfo(data.guildInfo)
                 }).catch(function (error) {
