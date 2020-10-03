@@ -11,7 +11,7 @@ export default (props) => {
 
     const [enabled, setEnabled] = useState(true);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
-    const [applicationLogChannel, setApplicationLogChannel] = useState({ logChannelType: "", value: "" })
+    const [applicationLogChannel, setApplicationLogChannel] = useState(null)
     const [channels, setChannels] = useState(null)
     const [categories, setCategories] = useState(null)
     const [type, setType] = useState("logChannel")
@@ -181,7 +181,7 @@ export default (props) => {
                     <div>
                         <fieldset>
                             <legend>Log Channel Type</legend>
-                            {applicationLogChannel ? (applicationLogChannel.logChannelType == "logChannel") ?
+                            {type ? (type.logChannelType == "logChannel") ?
                                 <>
                                     <label forHTML="logChannel">Specific Channel</label>
                                     <input type="radio" id="logChannel" name="logChannelType" onClick={() => setType("logChannel")} value="logChannel" ref={register} defaultChecked />
