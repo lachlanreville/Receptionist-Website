@@ -49,7 +49,7 @@ export default (props) => {
     }, [props.application])
 
     useEffect(() => {
-        let appChannel = server.applicationLogChannel;
+        let appChannel = application.applicationLogChannel;
         if (appChannel == "multiple") {
             setType("multiple")
         } else {
