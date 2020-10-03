@@ -11,7 +11,7 @@ export default (props) => {
 
     const [enabled, setEnabled] = useState(true);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
-    const [applicationLogChannel, setApplicationLogChannel] = useState(null)
+    const [applicationLogChannel, setApplicationLogChannel] = useState({ selectedOption: {} })
     const [channels, setChannels] = useState(null)
     const [categories, setCategories] = useState(null)
     const [type, setType] = useState(null)
