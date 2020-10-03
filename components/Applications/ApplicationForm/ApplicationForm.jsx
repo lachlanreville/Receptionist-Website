@@ -74,7 +74,7 @@ export default (props) => {
         server.categories.map(c => {
             serverCategories.push({ value: c.id, label: c.name })
         })
-        setCategories(serverChannels)
+        setCategories(serverCategories)
     }, [])
 
     const handleAppRoleChange = (selectedOption) => {
