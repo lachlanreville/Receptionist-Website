@@ -162,7 +162,7 @@ export default (props) => {
                             isMulti
                             name="applicationAcceptRole"
                             placeholder="Application Accept Roles"
-                            defaultValue={applicationAcceptRole.selectedOption}
+                            value={applicationAcceptRole.selectedOption}
                             options={serverRoles}
                             onChange={handleAppRoleChange}
                         />
@@ -238,7 +238,7 @@ export default (props) => {
                                         })
                                     }
                                 }
-                                defaultValue={applicationLogChannel}
+                                value={applicationLogChannel}
                                 name="applicationLogChannel"
                                 options={type ? (type == "logChannel") ? channels : categories : null}
                             />
