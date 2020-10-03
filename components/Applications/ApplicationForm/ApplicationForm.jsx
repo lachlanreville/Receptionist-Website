@@ -103,7 +103,7 @@ export default (props) => {
         if (type == "multiple") {
             let label = "";
             if (!application.applicationCategoryId) {
-                setApplicationLogChannel(null)
+                setApplicationLogChannel({ selectedOption: {} })
             } else {
                 categories.map(c => {
                     if (c.value == application.applicationCategoryId) {
@@ -116,7 +116,7 @@ export default (props) => {
         } else {
             let label = "";
             if (!application.applicationLogChannel) {
-                setApplicationLogChannel(null)
+                setApplicationLogChannel({ selectedOption: {} })
             } else {
                 channels.map(c => {
                     if (c.value == application.applicationLogChannel) {
