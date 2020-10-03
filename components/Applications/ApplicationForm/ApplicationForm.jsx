@@ -64,7 +64,7 @@ export default (props) => {
     useEffect(() => {
         let serverChannels = []
         server.channels.map(c => {
-            serverChannels.push({ value: c.id, label: c.name })
+            serverChannels.push({ value: c.id, label: "#" + c.name })
         })
         setChannels(serverChannels)
     }, [])
@@ -110,13 +110,13 @@ export default (props) => {
             }
 
         } else {
-            let label = "";
+            let label = "#";
             if (!application.applicationLogChannel) {
                 setApplicationLogChannel(null)
             } else {
                 channels.map(c => {
                     if (c.value == application.applicationLogChannel) {
-                        label = c.label;
+                        label += c.label;
                     }
                 })
                 setApplicationLogChannel({ value: application.applicationLogChannel, label: label })
