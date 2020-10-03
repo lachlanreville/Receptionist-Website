@@ -119,7 +119,7 @@ export default (props) => {
                         label = c.label;
                     }
                 })
-                setApplicationLogChannel(application.applicationLogChannel)
+                setApplicationLogChannel({ value: application.applicationLogChannel, label: label })
             }
         }
     }, [type])
