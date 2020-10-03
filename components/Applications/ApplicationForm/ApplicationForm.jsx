@@ -93,10 +93,20 @@ export default (props) => {
         })
         setApplicationAcceptRole({ selectedOption: populatedData })
     }
+    useEffect(() => {
+        if (!type) return;
+
+        if (type == "multiple") {
+            setApplicationLogChannel(application.applicationCategoryId)
+        } else {
+            setApplicationLogChannel(application.applicationLogChannel)
+        }
+    }, [type])
 
     useEffect(() => {
         register({ name: "applicationAcceptRole", required: false })
         register({ name: "questions", required: true })
+        register({ name: "applicationAcceptRole", required: true })
 
     }, [])
 
@@ -131,7 +141,7 @@ export default (props) => {
                             isMulti
                             name="applicationAcceptRole"
                             placeholder="Application Accept Roles"
-                            value={applicationAcceptRole.selectedOption}
+                            defaultValue={applicationAcceptRole.selectedOption}
                             options={serverRoles}
                             onChange={handleAppRoleChange}
                         />
@@ -207,6 +217,8 @@ export default (props) => {
                                         })
                                     }
                                 }
+                                defaultValue={applicationLogChannel}
+                                name="applicationLogChannel"
                                 options={type ? (type == "logChannel") ? channels : categories : null}
                             />
                         </div>
