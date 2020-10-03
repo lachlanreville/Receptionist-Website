@@ -81,6 +81,10 @@ export default (props) => {
         setValue("applicationAcceptRole", selectedOption)
         setApplicationAcceptRole({ selectedOption })
     }
+    const handleLogChannelChange = (selectedOption) => {
+        setValue("applicationLogChannel", selectedOption)
+        setApplicationLogChannel({ selectedOption })
+    }
 
     let currentAppAcceptRoles = JSON.parse(application.applicationAcceptRole)
 
@@ -106,20 +110,20 @@ export default (props) => {
                         label = c.label;
                     }
                 })
-                setApplicationLogChannel({ value: application.applicationCategoryId, label: label })
+                setApplicationLogChannel({ selectedOption: { value: application.applicationCategoryId, label: label } })
             }
 
         } else {
-            let label = "#";
+            let label = "";
             if (!application.applicationLogChannel) {
                 setApplicationLogChannel(null)
             } else {
                 channels.map(c => {
                     if (c.value == application.applicationLogChannel) {
-                        label += c.label;
+                        label = c.label;
                     }
                 })
-                setApplicationLogChannel({ value: application.applicationLogChannel, label: label })
+                setApplicationLogChannel({ selectedOption: { value: application.applicationLogChannel, label: label } })
             }
         }
     }, [type])
@@ -127,7 +131,7 @@ export default (props) => {
     useEffect(() => {
         register({ name: "applicationAcceptRole", required: false })
         register({ name: "questions", required: true })
-        register({ name: "applicationAcceptRole", required: true })
+        register({ name: "applicationLogChannel", required: true })
 
     }, [])
 
@@ -238,8 +242,9 @@ export default (props) => {
                                         })
                                     }
                                 }
-                                value={applicationLogChannel}
+                                value={applicationLogChannel.selectedOption}
                                 name="applicationLogChannel"
+                                onChange={handleLogChannelChange}
                                 options={type ? (type == "logChannel") ? channels : categories : null}
                             />
                         </div>
