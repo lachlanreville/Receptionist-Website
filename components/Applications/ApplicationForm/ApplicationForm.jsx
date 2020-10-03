@@ -14,7 +14,7 @@ export default (props) => {
     const [applicationLogChannel, setApplicationLogChannel] = useState(null)
     const [channels, setChannels] = useState(null)
     const [categories, setCategories] = useState(null)
-    const [type, setType] = useState("logChannel")
+    const [type, setType] = useState(null)
 
     const { register, handleSubmit, setValue, control, reset } = useForm();
 
@@ -51,9 +51,9 @@ export default (props) => {
     useEffect(() => {
         let appChannel = server.applicationLogChannel;
         if (appChannel == "multiple") {
-            setApplicationLogChannel({ logChannelType: "multiple", value: server.applicationCategoryId })
+            setType("multiple")
         } else {
-            setApplicationLogChannel({ logChannelType: "logChannel", value: appChannel })
+            setType("logChannel")
         }
     }, [application])
 
@@ -207,7 +207,7 @@ export default (props) => {
                                         })
                                     }
                                 }
-                                options={(type == "logChannel") ? channels : categories}
+                                options={type ? (type == "logChannel") ? channels : categories : null}
                             />
                         </div>
                     </div>
