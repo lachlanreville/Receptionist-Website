@@ -97,9 +97,30 @@ export default (props) => {
         if (!type) return;
 
         if (type == "multiple") {
-            setApplicationLogChannel(application.applicationCategoryId)
+            let label = "";
+            if (!application.applicationCategoryId) {
+                setApplicationLogChannel(null)
+            } else {
+                categories.map(c => {
+                    if (c.value == application.applicationCategoryId) {
+                        label = c.label;
+                    }
+                })
+                setApplicationLogChannel({ value: application.applicationCategoryId, label: label })
+            }
+
         } else {
-            setApplicationLogChannel(application.applicationLogChannel)
+            let label = "";
+            if (!application.applicationLogChannel) {
+                setApplicationLogChannel(null)
+            } else {
+                channels.map(c => {
+                    if (c.value == application.applicationLogChannel) {
+                        label = c.label;
+                    }
+                })
+                setApplicationLogChannel(application.applicationLogChannel)
+            }
         }
     }, [type])
 
