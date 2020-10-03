@@ -12,6 +12,9 @@ export default (props) => {
     const [enabled, setEnabled] = useState(true);
     const [applicationAcceptRole, setApplicationAcceptRole] = useState({ selectedOption: [] })
     const [applicationLogChannel, setApplicationLogChannel] = useState({ logChannelType: "", value: "" })
+    const [channels, setChannels] = useState(null)
+    const [categories, setCategories] = useState(null)
+    const [type, setType] = useState("logChannel")
 
     const { register, handleSubmit, setValue, control, reset } = useForm();
 
@@ -56,6 +59,22 @@ export default (props) => {
 
     server.roles.map(c => {
         serverRoles.push({ value: c.id, label: c.name })
+    })
+
+    useEffect(() => {
+        let serverChannels = []
+        server.channels.map(c => {
+            serverChannels.push({ value: c.id, label: c.name })
+        })
+        setChannels(serverChannels)
+    })
+
+    useEffect(() => {
+        let serverCategories = []
+        server.categories.map(c => {
+            serverCategories.push({ value: c.id, label: c.name })
+        })
+        setCategories(serverChannels)
     })
 
     const handleAppRoleChange = (selectedOption) => {
@@ -165,22 +184,30 @@ export default (props) => {
                             {applicationLogChannel ? (applicationLogChannel.logChannelType == "logChannel") ?
                                 <>
                                     <label forHTML="logChannel">Specific Channel</label>
-                                    <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} defaultChecked />
+                                    <input type="radio" id="logChannel" name="logChannelType" onClick={() => setType("logChannel")} value="logChannel" ref={register} defaultChecked />
                                     <label forHTML="multiple">Multiple Channels</label>
-                                    <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} />
+                                    <input type="radio" id="multiple" name="logChannelType" onClick={() => setType("multiple")} value="multiple" ref={register} />
                                 </>
                                 :
                                 <>
                                     <label forHTML="logChannel">Specific Channel</label>
-                                    <input type="radio" id="logChannel" name="logChannelType" value="logChannel" ref={register} />
+                                    <input type="radio" id="logChannel" name="logChannelType" onClick={() => setType("logChannel")} value="logChannel" ref={register} />
                                     <label forHTML="multiple">Multiple Channels</label>
-                                    <input type="radio" id="multiple" name="logChannelType" value="multiple" ref={register} defaultChecked />
+                                    <input type="radio" id="multiple" name="logChannelType" onClick={() => setType("multiple")} value="multiple" ref={register} defaultChecked />
                                 </>
                                 : <h1>Loading</h1>}
                         </fieldset>
                         <div>
                             <Select
-
+                                styles={
+                                    {
+                                        option: (provided, state) => ({
+                                            ...provided,
+                                            color: "black"
+                                        })
+                                    }
+                                }
+                                options={(type == "logChannel") ? channels : categories}
                             />
                         </div>
                     </div>
