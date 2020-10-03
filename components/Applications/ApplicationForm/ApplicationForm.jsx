@@ -181,7 +181,7 @@ export default (props) => {
                     <div>
                         <fieldset>
                             <legend>Log Channel Type</legend>
-                            {type ? (type.logChannelType == "logChannel") ?
+                            {type ? (type == "logChannel") ?
                                 <>
                                     <label forHTML="logChannel">Specific Channel</label>
                                     <input type="radio" id="logChannel" name="logChannelType" onClick={() => setType("logChannel")} value="logChannel" ref={register} defaultChecked />
