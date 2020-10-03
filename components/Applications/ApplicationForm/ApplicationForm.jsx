@@ -67,7 +67,7 @@ export default (props) => {
             serverChannels.push({ value: c.id, label: c.name })
         })
         setChannels(serverChannels)
-    })
+    }, [])
 
     useEffect(() => {
         let serverCategories = []
@@ -75,7 +75,7 @@ export default (props) => {
             serverCategories.push({ value: c.id, label: c.name })
         })
         setCategories(serverChannels)
-    })
+    }, [])
 
     const handleAppRoleChange = (selectedOption) => {
         setValue("applicationAcceptRole", selectedOption)
