@@ -49,7 +49,8 @@ export default (props) => {
     }, [props.application])
 
     useEffect(() => {
-        let appChannel = props.application.applicationLogChannel;
+        let appChannel = application.applicationLogChannel;
+        console.log("also triggered cause im a cunt")
         if (appChannel == "multiple") {
             setType("multiple")
         } else {
@@ -99,31 +100,32 @@ export default (props) => {
     }
     useEffect(() => {
         if (!type) return;
+        console.log("triggered this CUUUUUNT")
 
         if (type == "multiple") {
             let label = "";
-            if (!props.application.applicationCategoryId) {
+            if (!application.applicationCategoryId) {
                 setApplicationLogChannel({ selectedOption: {} })
             } else {
                 categories.map(c => {
-                    if (c.value == props.application.applicationCategoryId) {
+                    if (c.value == application.applicationCategoryId) {
                         label = c.label;
                     }
                 })
-                setApplicationLogChannel({ selectedOption: { value: props.application.applicationCategoryId, label: label } })
+                setApplicationLogChannel({ selectedOption: { value: application.applicationCategoryId, label: label } })
             }
 
         } else {
             let label = "";
-            if (!props.application.applicationLogChannel) {
+            if (!application.applicationLogChannel) {
                 setApplicationLogChannel({ selectedOption: {} })
             } else {
                 channels.map(c => {
-                    if (c.value == props.application.applicationLogChannel) {
+                    if (c.value == application.applicationLogChannel) {
                         label = c.label;
                     }
                 })
-                setApplicationLogChannel({ selectedOption: { value: props.application.applicationLogChannel, label: label } })
+                setApplicationLogChannel({ selectedOption: { value: application.applicationLogChannel, label: label } })
             }
         }
     }, [type])
