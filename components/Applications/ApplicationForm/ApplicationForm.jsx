@@ -106,12 +106,15 @@ export default (props) => {
             let label = "";
             if (!application.applicationCategoryId) {
                 setApplicationLogChannel({ selectedOption: {} })
+                setValue("applicationLogChannel", {})
             } else {
                 categories.map(c => {
                     if (c.value == application.applicationCategoryId) {
                         label = c.label;
                     }
                 })
+                setValue("applicationLogChannel", { value: application.applicationCategoryId, label: label })
+
                 setApplicationLogChannel({ selectedOption: { value: application.applicationCategoryId, label: label } })
             }
 
@@ -119,16 +122,19 @@ export default (props) => {
             let label = "";
             if (!application.applicationLogChannel) {
                 setApplicationLogChannel({ selectedOption: {} })
+                setValue("applicationLogChannel", {})
             } else {
                 channels.map(c => {
                     if (c.value == application.applicationLogChannel) {
                         label = c.label;
                     }
                 })
+                setValue("applicationLogChannel", { value: application.applicationLogChannel, label: label })
+
                 setApplicationLogChannel({ selectedOption: { value: application.applicationLogChannel, label: label } })
             }
         }
-    }, [type, application])
+    }, [type])
 
     useEffect(() => {
         register({ name: "applicationAcceptRole", required: false })
