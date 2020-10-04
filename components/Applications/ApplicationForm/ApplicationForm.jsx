@@ -50,7 +50,7 @@ export default (props) => {
         setServer(props.serverData)
         setEnabled(props.application.enabled)
         setApplication(props.application)
-        setApplicationAcceptRole({ selectedOption: {} })
+        setApplicationAcceptRole({ selectedOption: null })
     }, [props.application])
 
     useEffect(() => {
