@@ -105,7 +105,7 @@ export default (props) => {
         if (type == "multiple") {
             let label = "";
             if (!application.applicationCategoryId) {
-                setApplicationLogChannel({ selectedOption: {} })
+                setApplicationLogChannel({ selectedOption: { value: null, label: "No Category" } })
                 setValue("applicationLogChannel", {})
             } else {
                 categories.map(c => {
