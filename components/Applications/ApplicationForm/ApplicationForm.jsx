@@ -128,7 +128,7 @@ export default (props) => {
                 setApplicationLogChannel({ selectedOption: { value: application.applicationLogChannel, label: label } })
             }
         }
-    }, [type])
+    }, [type, application])
 
     useEffect(() => {
         register({ name: "applicationAcceptRole", required: false })
