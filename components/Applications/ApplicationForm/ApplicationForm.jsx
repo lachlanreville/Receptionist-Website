@@ -257,8 +257,8 @@ export default (props) => {
                     </div>
 
                 </div>
-                <div className="formGroup">
-                    <input type="submit" value="Apply Changes!" />
+                <div className={styles.buttonGroup}>
+                    <input type="submit" value="Apply Changes!" className={styles.buttons} />
                 </div>
             </form>
         </>

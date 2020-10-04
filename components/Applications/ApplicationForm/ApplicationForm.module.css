@@ -61,3 +61,15 @@
     padding-right: 15px;
     display: inline;
 }
+
+.buttonGroup {
+    margin-top: 15px;
+    border-top: 1px solid white;
+    display: inline-flex;
+    width: 100%;
+}
+
+.buttons {
+    font-size: 18px;
+    margin: 10px;
+}
