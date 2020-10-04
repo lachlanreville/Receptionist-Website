@@ -43,6 +43,10 @@ export default (props) => {
     useEffect(() => {
         reset()
 
+        register({ name: "applicationAcceptRole", required: false })
+        register({ name: "questions", required: true })
+        register({ name: "applicationLogChannel", required: true })
+
         setServer(props.serverData)
         setEnabled(props.application.enabled)
         setApplication(props.application)
@@ -136,13 +140,6 @@ export default (props) => {
             }
         }
     }, [type])
-
-    useEffect(() => {
-        register({ name: "applicationAcceptRole", required: false })
-        register({ name: "questions", required: true })
-        register({ name: "applicationLogChannel", required: true })
-
-    }, [])
 
     return (
         <>
