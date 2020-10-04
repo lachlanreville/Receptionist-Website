@@ -49,7 +49,7 @@ export default (props) => {
     }, [props.application])
 
     useEffect(() => {
-        let appChannel = application.applicationLogChannel;
+        let appChannel = props.application.applicationLogChannel;
         if (appChannel == "multiple") {
             setType("multiple")
         } else {
@@ -102,28 +102,28 @@ export default (props) => {
 
         if (type == "multiple") {
             let label = "";
-            if (!application.applicationCategoryId) {
+            if (!props.application.applicationCategoryId) {
                 setApplicationLogChannel({ selectedOption: {} })
             } else {
                 categories.map(c => {
-                    if (c.value == application.applicationCategoryId) {
+                    if (c.value == props.application.applicationCategoryId) {
                         label = c.label;
                     }
                 })
-                setApplicationLogChannel({ selectedOption: { value: application.applicationCategoryId, label: label } })
+                setApplicationLogChannel({ selectedOption: { value: props.application.applicationCategoryId, label: label } })
             }
 
         } else {
             let label = "";
-            if (!application.applicationLogChannel) {
+            if (!props.application.applicationLogChannel) {
                 setApplicationLogChannel({ selectedOption: {} })
             } else {
                 channels.map(c => {
-                    if (c.value == application.applicationLogChannel) {
+                    if (c.value == props.application.applicationLogChannel) {
                         label = c.label;
                     }
                 })
-                setApplicationLogChannel({ selectedOption: { value: application.applicationLogChannel, label: label } })
+                setApplicationLogChannel({ selectedOption: { value: props.application.applicationLogChannel, label: label } })
             }
         }
     }, [type])
