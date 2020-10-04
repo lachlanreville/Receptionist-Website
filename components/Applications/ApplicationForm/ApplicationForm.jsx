@@ -71,7 +71,7 @@ export default (props) => {
     }, [])
 
     useEffect(() => {
-        let serverCategories = []
+        let serverCategories = [{ value: null, label: "No Category" }]
         server.categories.map(c => {
             serverCategories.push({ value: c.id, label: c.name })
         })
