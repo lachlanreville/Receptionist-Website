@@ -190,7 +190,7 @@ export default (props) => {
                                         <li key={question.id}>
                                             <Controller
                                                 as={<input />}
-                                                name={`questions[${index}].question`}
+                                                name={`questions[${index}]`}
                                                 control={control}
                                                 className={styles.applicationQuestionInput}
                                                 defaultValue={question.question}
