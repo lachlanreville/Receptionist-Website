@@ -218,21 +218,10 @@ export default (props) => {
                     <div>
                         <fieldset>
                             <legend>Log Channel Type</legend>
-                            {type ? (type == "logChannel") ?
-                                <>
-                                    <label forHTML="logChannel">Specific Channel</label>
-                                    <input type="radio" id="logChannel" name="logChannelType" onClick={() => setType("logChannel")} value="logChannel" ref={register} defaultChecked />
-                                    <label forHTML="multiple">Multiple Channels</label>
-                                    <input type="radio" id="multiple" name="logChannelType" onClick={() => setType("multiple")} value="multiple" ref={register} />
-                                </>
-                                :
-                                <>
-                                    <label forHTML="logChannel">Specific Channel</label>
-                                    <input type="radio" id="logChannel" name="logChannelType" onClick={() => setType("logChannel")} value="logChannel" ref={register} />
-                                    <label forHTML="multiple">Multiple Channels</label>
-                                    <input type="radio" id="multiple" name="logChannelType" onClick={() => setType("multiple")} value="multiple" ref={register} defaultChecked />
-                                </>
-                                : <h1>Loading</h1>}
+                            <label forHTML="logChannel">Specific Channel</label>
+                            <input type="radio" id="logChannel" name="logChannelType" onClick={() => setType("logChannel")} checked={type == "logChannel"} value="logChannel" ref={register} />
+                            <label forHTML="multiple">Multiple Channels</label>
+                            <input type="radio" id="multiple" name="logChannelType" onClick={() => setType("multiple")} value="multiple" ref={register} checked={type == "multiple"} />
                         </fieldset>
                         <div>
                             <Select
