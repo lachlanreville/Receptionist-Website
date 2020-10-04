@@ -224,10 +224,14 @@ export default (props) => {
                     <div>
                         <fieldset className={styles.applicationQuestionFieldSet}>
                             <legend>Log Channel Type</legend>
-                            <label forHTML="logChannel">Specific Channel</label>
-                            <input type="radio" id="logChannel" name="logChannelType" onClick={() => setType("logChannel")} checked={type == "logChannel"} value="logChannel" ref={register} />
-                            <label forHTML="multiple">Multiple Channels</label>
-                            <input type="radio" id="multiple" name="logChannelType" onClick={() => setType("multiple")} value="multiple" ref={register} checked={type == "multiple"} />
+                            <div className={styles.radioGroup}>
+                                <label forHTML="logChannel">Specific Channel</label>
+                                <input type="radio" id="logChannel" name="logChannelType" onClick={() => setType("logChannel")} checked={type == "logChannel"} value="logChannel" ref={register} />
+                            </div>
+                            <div className={styles.radioGroup}>
+                                <label forHTML="multiple">Multiple Channels</label>
+                                <input type="radio" id="multiple" name="logChannelType" onClick={() => setType("multiple")} value="multiple" ref={register} checked={type == "multiple"} />
+                            </div>
                             <div>
                                 <fieldset className={styles.applicationQuestionFieldSet}>
                                     <legend>{(type == "multiple") ? "Server Categories" : "Server Channels"}</legend>
