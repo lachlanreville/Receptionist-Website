@@ -229,22 +229,25 @@ export default (props) => {
                             <label forHTML="multiple">Multiple Channels</label>
                             <input type="radio" id="multiple" name="logChannelType" onClick={() => setType("multiple")} value="multiple" ref={register} checked={type == "multiple"} />
                             <div>
-                                <label forHTML="applicationLogChannel">{(type == "multiple") ? "Server Categories" : "Server Channels"}</label>
-                                <Select
-                                    id="applicationLogChannel"
-                                    styles={
-                                        {
-                                            option: (provided, state) => ({
-                                                ...provided,
-                                                color: "black"
-                                            })
+                                <fieldset className={styles.applicationQuestionFieldSet}>
+                                    <legend>{(type == "multiple") ? "Server Categories" : "Server Channels"}</legend>
+                                    <Select
+                                        id="applicationLogChannel"
+                                        styles={
+                                            {
+                                                option: (provided, state) => ({
+                                                    ...provided,
+                                                    color: "black"
+                                                })
+                                            }
                                         }
-                                    }
-                                    value={applicationLogChannel.selectedOption}
-                                    name="applicationLogChannel"
-                                    onChange={handleLogChannelChange}
-                                    options={type ? (type == "logChannel") ? channels : categories : null}
-                                />
+                                        value={applicationLogChannel.selectedOption}
+                                        name="applicationLogChannel"
+                                        onChange={handleLogChannelChange}
+                                        options={type ? (type == "logChannel") ? channels : categories : null}
+                                    />
+                                </fieldset>
+
                             </div>
                         </fieldset>
                     </div>
