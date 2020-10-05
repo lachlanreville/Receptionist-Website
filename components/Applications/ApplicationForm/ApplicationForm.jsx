@@ -3,6 +3,7 @@ import Switch from "react-switch";
 import { useEffect, useState } from 'react'
 import Select from "react-select"
 import styles from "./ApplicationForm.module.css"
+import axios from "axios";
 
 export default (props) => {
     if (!props.application) return (<h1>No Application Data</h1>)
@@ -14,6 +15,7 @@ export default (props) => {
     const [applicationLogChannel, setApplicationLogChannel] = useState({ selectedOption: {} })
     const [channels, setChannels] = useState(null)
     const [categories, setCategories] = useState(null)
+    const [userData, setUserData] = useState({})
     const [type, setType] = useState(null)
 
     const { register, handleSubmit, setValue, control, reset } = useForm();
@@ -37,12 +39,20 @@ export default (props) => {
 
     }, [application])
 
-    const onSubmit = data => console.log(data)
+    const onSubmit = data => {
+        axios.post(`https://receptioni.st/api/guilds/${application.guildID}/${application.applicationId}/edit`, {
+            access: userData.access,
+            refresh: userData.refresh,
+            data
+        })
+    }
     let serverRoles = [];
 
     useEffect(() => {
         reset()
-
+        let access = window.localStorage.getItem("access_token")
+        let refresh = window.localStorage.getItem("refresh_token")
+        setUserData({ access, refresh })
         register({ name: "applicationAcceptRole", required: false })
         register({ name: "questions", required: true })
         register({ name: "applicationLogChannel", required: true })
