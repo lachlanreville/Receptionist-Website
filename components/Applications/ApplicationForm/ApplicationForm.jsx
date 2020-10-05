@@ -114,8 +114,9 @@ export default (props) => {
         })
 
         setApplicationAcceptRole({ selectedOption: populatedData })
+
     } else {
-        setApplicationAcceptRole({ selectedOption: {} })
+        setApplicationAcceptRole({ selectedOption: [] })
     }
 
     useEffect(() => {
