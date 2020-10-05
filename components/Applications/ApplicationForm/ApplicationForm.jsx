@@ -112,13 +112,12 @@ export default (props) => {
                 populatedData.push(c)
             }
         })
-        if (populatedData.length > 0) {
-            setApplicationAcceptRole({ selectedOption: populatedData })
-        } else {
-            setApplicationAcceptRole({ selectedOption: {} })
-        }
 
+        setApplicationAcceptRole({ selectedOption: populatedData })
+    } else {
+        setApplicationAcceptRole({ selectedOption: {} })
     }
+
     useEffect(() => {
         if (!type) return;
         console.log("triggered this CUUUUUNT")
