@@ -54,9 +54,9 @@ export default (props) => {
         let access = window.localStorage.getItem("access_token")
         let refresh = window.localStorage.getItem("refresh_token")
         setUserData({ access, refresh })
-        register({ name: "applicationAcceptRole", required: true, defaultValue: [] })
+        register({ name: "applicationAcceptRole", required: true })
         register({ name: "questions", required: true })
-        register({ name: "applicationLogChannel", required: true, defaultValue: {} })
+        register({ name: "applicationLogChannel", required: true })
 
         setServer(props.serverData)
         setEnabled(props.application.enabled)
@@ -115,8 +115,6 @@ export default (props) => {
             })
 
             setApplicationAcceptRole({ selectedOption: populatedData })
-        } else {
-            setApplicationAcceptRole({ selectedOption: [] })
         }
     }, [application])
 
