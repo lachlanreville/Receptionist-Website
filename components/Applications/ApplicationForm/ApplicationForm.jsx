@@ -104,20 +104,23 @@ export default (props) => {
     }
 
     let currentAppAcceptRoles = JSON.parse(application.applicationAcceptRole)
+    useEffect(() => {
+        let currentAppAcceptRoles = JSON.parse(application.applicationAcceptRole)
 
-    if (currentAppAcceptRoles.length > 0) {
-        let populatedData = [];
-        serverRoles.map(c => {
-            if (currentAppAcceptRoles.includes(c.value)) {
-                populatedData.push(c)
-            }
-        })
+        if (currentAppAcceptRoles.length > 0) {
+            let populatedData = [];
+            serverRoles.map(c => {
+                if (currentAppAcceptRoles.includes(c.value)) {
+                    populatedData.push(c)
+                }
+            })
 
-        setApplicationAcceptRole({ selectedOption: populatedData })
+            setApplicationAcceptRole({ selectedOption: populatedData })
+        } else {
+            setApplicationAcceptRole({ selectedOption: [] })
+        }
+    }, [application])
 
-    } else {
-        setApplicationAcceptRole({ selectedOption: [] })
-    }
 
     useEffect(() => {
         if (!type) return;
