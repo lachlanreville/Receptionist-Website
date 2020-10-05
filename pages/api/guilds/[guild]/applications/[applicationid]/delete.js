@@ -28,6 +28,7 @@ export default async (req, res) => {
         let data;
         try {
             data = await deleteApplication(guild, applicationid)
+            console.log(data)
         }
         catch (err) {
             res.statusCode = 500;
