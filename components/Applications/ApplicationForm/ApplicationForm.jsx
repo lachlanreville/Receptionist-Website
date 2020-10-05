@@ -280,9 +280,8 @@ export default (props) => {
                 </div>
                 <div className={styles.buttonGroup}>
                     <input type="submit" value="Apply Changes!" className={styles.buttons} />
-                </div>
-                <div className={styles.buttonGroup}>
-                    <input type="button" value="Delete Application!" onClick={handleDeleteApp} />
+                    <input type="button" className={styles.buttons} value="Delete Application!" onClick={handleDeleteApp} />
+
                 </div>
             </form>
         </>
