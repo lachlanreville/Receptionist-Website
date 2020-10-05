@@ -4,7 +4,6 @@ const { deleteApplication } = require('../../../../../../utils/database')
 export default async (req, res) => {
     const { guild, applicationid } = req.query;
     const { access, refresh, data } = req.body;
-    console.log(data)
     res.statusCode = 200;
     res.end();
     let adminCheck;
@@ -28,7 +27,7 @@ export default async (req, res) => {
     if (adminCheck.success == true) {
         let data;
         try {
-            let data = await deleteApplication(guild, applicationid)
+            data = await deleteApplication(guild, applicationid)
         }
         catch (err) {
             res.statusCode = 500;
