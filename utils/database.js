@@ -57,3 +57,16 @@ export const getApplication = async (guildid, applicationId) => {
 
     return data;
 }
+
+export const deleteApplication = async (guildid, applicationId) => {
+
+    if (!guildid || !applicationId) {
+        return { success: false }
+    }
+    let con = await Connect();
+
+    let sql = "DELETE q.*, a.*, t.*, r.* FROM questions q, applications a, triggertypes t, responses r WHERE r.guildId = a.guildId AND q.guildId = a.guildId AND t.guildid = a.guildId AND a.guildId = ? AND r.applicationId = a.applicationId AND q.applicationId =  a.applicationId AND t.applicationId = a.applicationId AND a.applicationId = ?;"
+
+    let data = await con.awaitQuery(sql, [guildId, applicationId])
+    return data;
+}

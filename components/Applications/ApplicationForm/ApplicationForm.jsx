@@ -103,6 +103,13 @@ export default (props) => {
         setApplicationLogChannel({ selectedOption })
     }
 
+    const handleDeleteApp = () => {
+        axios.post(`https://receptioni.st/api/guilds/${application.guildID}/applications/${application.applicationID}/delete`, {
+            access: userData.access,
+            refresh: userData.refresh
+        })
+    }
+
     useEffect(() => {
         let currentAppAcceptRoles = JSON.parse(application.applicationAcceptRole)
 
@@ -273,6 +280,9 @@ export default (props) => {
                 </div>
                 <div className={styles.buttonGroup}>
                     <input type="submit" value="Apply Changes!" className={styles.buttons} />
+                </div>
+                <div className={styles.buttonGroup}>
+                    <input type="button" value="Delete Application!" onClick={handleDeleteApp} />
                 </div>
             </form>
         </>
