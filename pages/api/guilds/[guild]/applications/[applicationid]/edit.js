@@ -5,6 +5,8 @@ export default async (req, res) => {
     const { guild, applicationid } = req.query;
     const { access, refresh, data } = req.body;
     console.log(data)
+    res.statusCode = 200;
+    res.end();
     // let adminCheck;
 
     // try {
