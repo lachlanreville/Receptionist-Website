@@ -103,7 +103,6 @@ export default (props) => {
         setApplicationLogChannel({ selectedOption })
     }
 
-    let currentAppAcceptRoles = JSON.parse(application.applicationAcceptRole)
     useEffect(() => {
         let currentAppAcceptRoles = JSON.parse(application.applicationAcceptRole)
 
