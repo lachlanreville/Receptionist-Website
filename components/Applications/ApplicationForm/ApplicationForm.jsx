@@ -112,7 +112,12 @@ export default (props) => {
                 populatedData.push(c)
             }
         })
-        setApplicationAcceptRole({ selectedOption: populatedData })
+        if (populatedData.length > 0) {
+            setApplicationAcceptRole({ selectedOption: populatedData })
+        } else {
+            setApplicationAcceptRole({ selectedOption: {} })
+        }
+
     }
     useEffect(() => {
         if (!type) return;
