@@ -40,6 +40,7 @@ export default (props) => {
     }, [application])
 
     const onSubmit = data => {
+        console.log(data)
         axios.post(`https://receptioni.st/api/guilds/${application.guildID}/applications/${application.applicationID}/edit`, {
             access: userData.access,
             refresh: userData.refresh,
