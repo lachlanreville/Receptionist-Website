@@ -19,7 +19,6 @@ export default async (req, res) => {
             res.end();
         }
     }
-    console.log(data)
 
     data = data.data;
 
